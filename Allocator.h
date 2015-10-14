@@ -143,7 +143,7 @@ class Allocator {
          * throw an invalid_argument exception, if p is invalid
          * <your documentation>
          */
-        void deallocate (pointer p, size_type) {
+        void deallocate (pointer p, size_type n) {
             // <your code>
             assert(valid());}
 
