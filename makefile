@@ -1,7 +1,7 @@
 FILES :=                              \
     .travis.yml                       \
-    allocator-tests/hed287-TestAllocator.c++ \
-    allocator-tests/hed287-TestAllocator.out \
+    allocator-tests/jem74-TestAllocator.c++ \
+    allocator-tests/jem74-TestAllocator.out \
     Allocator.h                         \
     Allocator.log                       \
     html                              \
