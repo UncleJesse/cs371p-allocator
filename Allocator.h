@@ -16,6 +16,10 @@
 #include <new>       // bad_alloc, new
 #include <stdexcept> // invalid_argument
 #include "gtest/gtest_prod.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> dee3fd64baab40f8c2642ce968afca2f47f44550
 // ---------
 // Allocator
 // ---------
@@ -87,15 +91,18 @@ class Allocator {
         // ------------
         // constructors
         // ------------
-
         /**
          * O(1) in space
          * O(1) in time
          * throw a bad_alloc exception, if N is less than sizeof(T) + (2 * sizeof(int))
          */
         Allocator () {
-            (*this)[0] = 0; // replace!
-            // <your code>
+            if (N < sizeof(T) + (2 * sizeof(int)))
+            {
+                throw std::bad_alloc();
+            }
+            (*this)[0] = N - (2 * sizeof(int));
+            (*this)[N - sizeof(int)] = N - (2 * sizeof(int));
             assert(valid());}
 
         // Default copy, destructor, and copy assignment
