@@ -120,7 +120,28 @@ class Allocator {
          * throw a bad_alloc exception, if n is invalid
          */
         pointer allocate (size_type n) {
-            // <your code>
+            if (n < 0) {
+                throw std::domain_error("negative number");
+            }
+            if (n == 0) {
+                return nullptr;}
+            int i = 0;
+            while (i < N) {
+                int s = (*this)[i];
+                if (s < 0) {
+                    i += -s + (2 * sizeof(int));
+                }
+                else if (s < n) {
+                    i += s + (2 * sizeof(int));
+                }
+                else {
+                    (*this)[i] = n;
+                    (*this)[i + n + sizeof(int)] = n;
+                    i = N;
+                }
+            }
+
+
             assert(valid());
             return nullptr;}             // replace!
 

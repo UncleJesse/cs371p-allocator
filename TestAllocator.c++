@@ -8,6 +8,7 @@
 // includes
 // --------
 
+#include <cstring>   // strcmp
 #include <algorithm> // count
 #include <memory>    // allocator
 
@@ -96,24 +97,27 @@ TEST(TestAllocator2, index) {
     Allocator<int, 100> x;
     ASSERT_EQ(x[0], 92);}
 
+/**
+ * Tests default constructor with a big and small number, as
+ * well as a number that is too small 
+ */
 TEST(TestAllocator2, default_constructor) {
-    const Allocator<int, 100> x;
-    ASSERT_EQ(x[0], 92);
-    ASSERT_EQ(x[96], 92);
-}
+    const Allocator<int, 200> x;
+    ASSERT_EQ(x[0], 192);
+    ASSERT_EQ(x[196], 192);}
 
 TEST(TestAllocator2, default_constructor_smallest) {
     const Allocator<int, 12> x;
     ASSERT_EQ(x[0], 4);
-    ASSERT_EQ(x[8], 4);
-}
+    ASSERT_EQ(x[8], 4);}
 
-TEST(TestAllocator2, defaulfgt_constructor_bad_alloc) {
+TEST(TestAllocator2, default_constructor_bad_alloc) {
     try {
     const Allocator<int, 2> x;
     ASSERT_TRUE(false);}
-    catch(const std::bad_alloc& e){}
-    }
+    catch(const std::bad_alloc& e){
+        std::cout << e.what() << std::endl;
+        ASSERT_TRUE(strcmp(e.what(), "Not enough space") == 0);}}
 
 // --------------
 // TestAllocator3
