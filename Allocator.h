@@ -16,10 +16,7 @@
 #include <new>       // bad_alloc, new
 #include <stdexcept> // invalid_argument
 #include "gtest/gtest_prod.h"
-<<<<<<< HEAD
-=======
 
->>>>>>> dee3fd64baab40f8c2642ce968afca2f47f44550
 // ---------
 // Allocator
 // ---------
