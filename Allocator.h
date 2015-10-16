@@ -15,7 +15,7 @@
 #include <cstddef>   // ptrdiff_t, size_t
 #include <new>       // bad_alloc, new
 #include <stdexcept> // invalid_argument
-
+#include "gtest/gtest_prod.h"
 // ---------
 // Allocator
 // ---------
@@ -70,7 +70,7 @@ class Allocator {
          * <your documentation>
          */
         bool valid () const {
-            // <your code>
+            
             return true;}
 
         /**
