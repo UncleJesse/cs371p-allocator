@@ -126,24 +126,39 @@ class Allocator {
             if (n == 0) {
                 return nullptr;}
             int i = 0;
-            while (i < N) {
+            bool not_done = true;
+            while (i < N && not_done) {
                 int s = (*this)[i];
-                if (s < 0) {
+                if (s < 0) {  //skips past allocated block
                     i += -s + (2 * sizeof(int));
                 }
-                else if (s < n) {
+                else if (s < (n * sizeof(T))) {  //skips past blocks that are too small
                     i += s + (2 * sizeof(int));
                 }
-                else {
-                    (*this)[i] = n;
-                    (*this)[i + n + sizeof(int)] = n;
-                    i = N;
+                else {  //acually allocates space
+                    if (s - n < (2 * sizeof(int) + sizeof(T)))  //coalesces blocks that are too small
+                    {
+                        (*this)[i] = -s;
+                        (*this)[i + s + sizeof(int)] = -s;
+                    }
+                    else {  
+                        (*this)[i] = -n;
+                        (*this)[i + n + sizeof(int)] = -n;
+                        (*this)[i + n + 2 * sizeof(int)] = s - n - (2 * sizeof(int));
+                        (*this)[i + s + sizeof(int)] = s - n - (2 * sizeof(int));
+                    }
+                    
+                    not_done = false;
                 }
             }
-
+            if (i == N)
+            {
+                throw std::bad_alloc();
+            }
 
             assert(valid());
-            return nullptr;}             // replace!
+            return  reinterpret_cast<T*>(&a[i]);
+        }             // replace!
 
         // ---------
         // construct
@@ -169,7 +184,7 @@ class Allocator {
          * <your documentation>
          */
         void deallocate (pointer p, size_type n) {
-            // <your code>
+            
             assert(valid());}
 
         // -------
@@ -187,7 +202,8 @@ class Allocator {
         /**
          * O(1) in space
          * O(1) in time
-         * <your documentation>
+         * It takes the four bytes on top of the reference, turns it into an
+         * int, and returns a contant alias to the value at the address
          */
         const int& operator [] (int i) const {
             return *reinterpret_cast<const int*>(&a[i]);}};
