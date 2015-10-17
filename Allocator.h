@@ -121,10 +121,11 @@ class Allocator {
          */
         pointer allocate (size_type n) {
             if (n < 0) {
-                throw std::domain_error("negative number");
+                throw std::bad_alloc();
             }
             if (n == 0) {
-                return nullptr;}
+                return nullptr;
+            }
             int i = 0;
             bool not_done = true;
             while (i < N && not_done) {
@@ -142,10 +143,10 @@ class Allocator {
                         (*this)[i + s + sizeof(int)] = -s;
                     }
                     else {  
-                        (*this)[i] = -n;
-                        (*this)[i + n + sizeof(int)] = -n;
-                        (*this)[i + n + 2 * sizeof(int)] = s - n - (2 * sizeof(int));
-                        (*this)[i + s + sizeof(int)] = s - n - (2 * sizeof(int));
+                        (*this)[i] = -n * sizeof(T);
+                        (*this)[i + n * sizeof(T) + sizeof(int)] = -n * sizeof(T);
+                        (*this)[i + n * sizeof(T) + 2 * sizeof(int)] = s - n * sizeof(T) - (2 * sizeof(int));
+                        (*this)[i + s + sizeof(int)] = s - n * sizeof(T) - (2 * sizeof(int));
                     }
                     
                     not_done = false;
@@ -157,8 +158,8 @@ class Allocator {
             }
 
             assert(valid());
-            return  reinterpret_cast<T*>(&a[i]);
-        }             // replace!
+            return  reinterpret_cast<T*>(&a[i + sizeof(int)]);
+        }         
 
         // ---------
         // construct

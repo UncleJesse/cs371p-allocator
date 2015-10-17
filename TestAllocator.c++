@@ -117,6 +117,12 @@ TEST(TestAllocator2, default_constructor_bad_alloc) {
     ASSERT_TRUE(false);}
     catch(const std::bad_alloc& e){ }}
 
+TEST(TestAllocator2, allocate) {
+    Allocator<int, 100> x;
+    int* p = x.allocate(1);
+    ASSERT_EQ (p[1], -4);
+    }
+
 // --------------
 // TestAllocator3
 // --------------
@@ -182,4 +188,4 @@ TYPED_TEST(TestAllocator3, test_10) {
         while (b != e) {
             --e;
             x.destroy(e);}
-        x.deallocate(b, 20);}}
+        x.deallocate(b, s);}}
