@@ -115,13 +115,89 @@ TEST(TestAllocator2, default_constructor_bad_alloc) {
     try {
     const Allocator<int, 2> x;
     ASSERT_TRUE(false);}
-    catch(const std::bad_alloc& e){ }}
+    catch(const std::bad_alloc& e){ 
+        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+    }
+}
 
-TEST(TestAllocator2, allocate) {
+TEST(TestAllocator2, allocate_1) {
     Allocator<int, 100> x;
+    int* p = x.allocate(23);
+    ASSERT_EQ (p[-1], -92);
+    ASSERT_EQ (p[23], -92);
+
+    }
+
+TEST(TestAllocator2, allocate_2) {
+    Allocator<int, 12> x;
     int* p = x.allocate(1);
     ASSERT_EQ (p[1], -4);
+    ASSERT_EQ (p[-1], -4);
+}
+
+TEST(TestAllocator2, allocate_3) {
+    Allocator<int, 100> x;
+    int* p = x.allocate(3);
+    ASSERT_EQ (p[-1], -12);
+    ASSERT_EQ (p[3], -12);
+
     }
+
+TEST(TestAllocator2, allocate_coalesce) {  //shows that allocate adds blocks that are too small
+    Allocator<int, 16> x;
+    int* p = x.allocate(1);
+    ASSERT_EQ (p[2], -8);
+    ASSERT_EQ (p[-1], -8);
+}
+
+TEST(TestAllocator2, allocate_multiple) {
+    Allocator<int, 100> x;
+    int* p = x.allocate(4);
+    x.allocate(2);   
+    x.allocate(5);
+    x.allocate(5);
+    ASSERT_EQ (p[-1], -16);
+    ASSERT_EQ (p[4], -16);
+    ASSERT_EQ (p[5], -8);
+    ASSERT_EQ (p[8], -8);
+    ASSERT_EQ (p[9], -20);
+    ASSERT_EQ (p[15], -20);
+    ASSERT_EQ (p[16], -24);
+    ASSERT_EQ (p[23], -24);
+}
+
+TEST(TestAllocator2, allocate_bad_alloc_1) {
+    try {
+    Allocator<int, 100> x;
+    x.allocate(24);
+    ASSERT_TRUE(false);}
+    catch(const std::bad_alloc& e){ 
+        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+    }
+}
+
+TEST(TestAllocator2, allocate_bad_alloc_2) {
+    try {
+    Allocator<int, 100> x;
+    x.allocate(-1);
+    ASSERT_TRUE(false);}
+    catch(const std::bad_alloc& e){ 
+        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+    }
+}
+
+TEST(TestAllocator2, allocate_bad_alloc_3) {
+    try {
+    Allocator<int, 100> x;
+    x.allocate(4);
+    x.allocate(2);   
+    x.allocate(5);
+    x.allocate(7);
+    ASSERT_TRUE(false);}
+    catch(const std::bad_alloc& e){ 
+        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+    }
+}
 
 // --------------
 // TestAllocator3

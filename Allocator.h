@@ -137,7 +137,12 @@ class Allocator {
                     i += s + (2 * sizeof(int));
                 }
                 else {  //acually allocates space
-                    if (s - n < (2 * sizeof(int) + sizeof(T)))  //coalesces blocks that are too small
+                    if (s - ( n * sizeof(T) ) < (2 * sizeof(int) + sizeof(T)))  //coalesces blocks that are too small
+                    {
+                        (*this)[i] = -s;
+                        (*this)[i + s + sizeof(int)] = -s;
+                    }
+                    else if (s - n == 0)  //simply adapts all the space at the sentinel
                     {
                         (*this)[i] = -s;
                         (*this)[i + s + sizeof(int)] = -s;
