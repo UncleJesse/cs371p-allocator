@@ -251,7 +251,41 @@ TEST(TestAllocator2, deallocate_1) {
     ASSERT_EQ(y[0], 92);
 }
 
-//-12...-12,-16...-16,a...a
+TEST(TestAllocator2, deallocate_2) {
+    Allocator<int, 12> x;
+    const Allocator<int, 12>& y = x;
+    int* p = x.allocate(1);
+    x.deallocate(p, 1);
+    ASSERT_EQ(y[0], 4);
+}
+
+TEST(TestAllocator2, deallocate_coalesce_1) {
+    Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
+    int* p = x.allocate(1);
+    int* k = x.allocate(1);
+    x.deallocate(k, 1);
+    x.deallocate(p, 2);
+    ASSERT_EQ(y[0], 92);
+    ASSERT_EQ(y[8], 0);
+    ASSERT_EQ(y[12], 0);
+    ASSERT_EQ(y[20], 0);
+    ASSERT_EQ(y[96], 92);
+}
+
+TEST(TestAllocator2, deallocate_coalesce_2) {
+    Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
+    int* p = x.allocate(1);
+    int* k = x.allocate(1);
+    x.deallocate(p, 1);
+    x.deallocate(k, 1);
+    ASSERT_EQ(y[0], 92);
+    ASSERT_EQ(y[8], 0);
+    ASSERT_EQ(y[12], 0);
+    ASSERT_EQ(y[20], 0);
+    ASSERT_EQ(y[96], 92);
+}
 
 // --------------
 // TestAllocator3

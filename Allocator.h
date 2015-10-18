@@ -192,40 +192,52 @@ class Allocator {
          * <your documentation>
          */
         void deallocate (pointer p, size_type n) {
-            int i = (int)((char*)p - a); //gets index of pointer in allocator
+            int b = (int)((char*)p - a); //gets index of pointer in allocator
 
-            if (i < sizeof(int) || i >= N - sizeof(int)){  //sees that pointer p is within a[N]
+            if (b < sizeof(int) || b >= N - sizeof(int)){  //sees that pointer p is within a[N]
 
                 throw std::invalid_argument("Pointer p is invalid");
             }
 
-            int& sentinel_1 = (*this)[i - 4];
-            int b = i + -sentinel_1;
+            int& sentinel_1 = (*this)[b - 4];
+            std::cout << sentinel_1 << std::endl;
+            int e = b + -sentinel_1;
             //checks that sentinel_2 is in a[N] and sentinel_1 is negative
-            if (b > N || b < i || sentinel_1 > 0) {  
+            if (e > N || e < b || sentinel_1 >= 0) {  
                 throw std::invalid_argument("Pointer p is invalid");
             }
-            int& sentinel_2 = (*this)[i + (-sentinel_1)];
-
+            int& sentinel_2 = (*this)[e];
+            std::cout << sentinel_2 << std::endl;
             if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){
                 throw std::invalid_argument("Pointer p is invalid");
             }
 
-            int& sentinel_3 = (*this)[i + (-sentinel_1) + sizeof(int)];
+            if (b > sizeof(int) && (*this)[b - 2 * sizeof(int)] > 0) { //coalesces free block behind
+                int q = b - 2 * sizeof(int);
+                int& sentinel_3 = (*this)[q];
+                int& sentinel_4 = (*this)[q - sentinel_3 - sizeof(int)];
+                int v = -sentinel_2 + sentinel_4 + 2 * sizeof(int);
+                sentinel_2 = v;
+                sentinel_4 = v;
+                sentinel_3 = 0;
+                sentinel_1 = 0;
+            }
             
-            if (sentinel_3 > 0) {
+            else if (e < (N - sizeof(int)) && (*this)[e + sizeof(int)] > 0) { //coalesces free block in front
+                int& sentinel_3 = (*this)[e + sizeof(int)];
                 int v = sentinel_3 + (-sentinel_1) + 2 * sizeof(int);
                 sentinel_1 = v;
-                int& sentinel_4 = (*this)[i + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
+                int& sentinel_4 = (*this)[b + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
                 sentinel_4 = v;
+                sentinel_2 = 0;
+                sentinel_3 = 0;
             }
             else {
                 sentinel_1 = -sentinel_1;
-                std::cout << sentinel_1 << std::endl;
                 sentinel_2 = -sentinel_2;
             }
 
-            //std::cout << i << std::endl;
+            //std::cout << b << std::endl;
             assert(valid());}
 
         // -------
