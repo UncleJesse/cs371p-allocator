@@ -162,8 +162,8 @@ TEST(TestAllocator2, allocate_2) {
     const Allocator<int, 12>& y = x;
     int* p = x.allocate(1);
     ASSERT_EQ (p, &y[4]);
-    ASSERT_EQ (p[1], -4);
-    ASSERT_EQ (p[-1], -4);
+    ASSERT_EQ (y[0], -4);
+    ASSERT_EQ (y[8], -4);
 }
 
 TEST(TestAllocator2, allocate_3) {
@@ -171,8 +171,8 @@ TEST(TestAllocator2, allocate_3) {
     const Allocator<int, 100>& y = x;
     int* p = x.allocate(3);
     ASSERT_EQ (p, &y[4]);
-    ASSERT_EQ (p[-1], -12);
-    ASSERT_EQ (p[3], -12);
+    ASSERT_EQ (y[0], -12);
+    ASSERT_EQ (y[16], -12);
 
     }
 
@@ -182,8 +182,8 @@ TEST(TestAllocator2, allocate_coalesce) {
     const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
     ASSERT_EQ (p, &y[4]);
-    ASSERT_EQ (p[2], -8);
-    ASSERT_EQ (p[-1], -8);
+    ASSERT_EQ (y[12], -8);
+    ASSERT_EQ (y[0], -8);
 }
 
 TEST(TestAllocator2, allocate_multiple) {
