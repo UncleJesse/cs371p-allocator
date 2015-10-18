@@ -239,12 +239,16 @@ TEST(TestAllocator2, allocate_bad_alloc_3) {
     }
 }
 
-/*TEST(TestAllocator2, deallocate_1) {
+/**
+ * Tests the deallocate function 
+ */
+
+TEST(TestAllocator2, deallocate_1) {
     Allocator<int, 100> x;
     int* p = x.allocate(23);
     x.deallocate(p, 1);
     ASSERT_EQ(p[-1], 92);
-    }*/
+}
 
 // --------------
 // TestAllocator3
