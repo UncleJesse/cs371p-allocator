@@ -200,6 +200,7 @@ class Allocator {
             }
 
             int& sentinel_1 = (*this)[i - 4];
+            std::cout << sentinel_1 << std::endl;
             int& sentinel_2 = (*this)[i + (-sentinel_1)];
 
             if (sentinel_1 > 0 || sentinel_2 > 0){
