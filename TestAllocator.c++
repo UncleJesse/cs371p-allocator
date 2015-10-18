@@ -173,7 +173,7 @@ TEST(TestAllocator2, allocate_3) {
     ASSERT_EQ (p, &y[4]);
     ASSERT_EQ (y[0], -12);
     ASSERT_EQ (y[16], -12);
-
+    ASSERT_EQ (y[20], 72);
     }
 
 TEST(TestAllocator2, allocate_coalesce) {
@@ -245,10 +245,14 @@ TEST(TestAllocator2, allocate_bad_alloc_3) {
 
 TEST(TestAllocator2, deallocate_1) {
     Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
     int* p = x.allocate(23);
     x.deallocate(p, 1);
-    ASSERT_EQ(p[-1], 92);
+    ASSERT_EQ(y[0], 92);
 }
+
+//make deall out of bounds test (need to erase values)
+//24,-16..-16,24
 
 // --------------
 // TestAllocator3
