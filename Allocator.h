@@ -15,6 +15,7 @@
 #include <cstddef>   // ptrdiff_t, size_t
 #include <new>       // bad_alloc, new
 #include <stdexcept> // invalid_argument
+#include <string>
 #include "gtest/gtest_prod.h"
 
 // ---------
@@ -120,6 +121,7 @@ class Allocator {
          * throw a bad_alloc exception, if n is invalid
          */
         pointer allocate (size_type n) {
+            // can't allocate negative sized blocks, throw bad_alloc
             if (n < 0) {
                 throw std::bad_alloc();
             }
@@ -190,7 +192,18 @@ class Allocator {
          * <your documentation>
          */
         void deallocate (pointer p, size_type n) {
-            
+            if (p == nullptr){
+                throw std::invalid_argument("Pointer p is invalid");
+            }
+            int* ip = reinterpret_cast<int*>(p);
+            int x = -ip[-1];
+            int y = x/sizeof(T);
+            ip[-1] = x;
+            p[y] = x;
+            std::cout << x << std::endl;
+            std::cout << y << std::endl;
+            std::cout << ip[-1] << std::endl;
+            std::cout << p[y] << std::endl;
             assert(valid());}
 
         // -------
