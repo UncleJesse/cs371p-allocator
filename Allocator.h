@@ -77,6 +77,7 @@ class Allocator {
                 int s = (*this)[i];
                 if (s == 0){ // invalid sentinal value
                     std::cout << "1st" << std::endl;
+                    throw std::logic_error("Invalid sentinal value");
                     return false;
                 }
                 else if (s < 0) {  //skips past allocated block
