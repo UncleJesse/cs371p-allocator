@@ -192,17 +192,16 @@ TEST(TestAllocator2, allocate_multiple) {
     x.allocate(4);
     x.allocate(2);   
     x.allocate(5);
-    int* p = x.allocate(5);
+    int* p = x.allocate(5); //this should coalesce remaining space
     ASSERT_EQ (p, &y[72]);
-    /*
-    ASSERT_EQ (p[-1], -16);
-    ASSERT_EQ (p[4], -16);
-    ASSERT_EQ (p[5], -8);
-    ASSERT_EQ (p[8], -8);
-    ASSERT_EQ (p[9], -20);
-    ASSERT_EQ (p[15], -20);
-    ASSERT_EQ (p[16], -24);
-    ASSERT_EQ (p[23], -24); */
+    ASSERT_EQ (y[0], -16);
+    ASSERT_EQ (p[20], -16);
+    ASSERT_EQ (p[24], -8);
+    ASSERT_EQ (p[36], -8);
+    ASSERT_EQ (p[40], -20);
+    ASSERT_EQ (p[64], -20);
+    ASSERT_EQ (p[68], -24);
+    ASSERT_EQ (p[96], -24);
 }
 
 
