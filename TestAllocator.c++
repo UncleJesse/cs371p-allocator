@@ -159,7 +159,7 @@ TEST(TestAllocator2, allocate_1) {
 
 TEST(TestAllocator2, allocate_2) {
     Allocator<int, 12> x;
-    const Allocator<int, 100>& y = x;
+    const Allocator<int, 12>& y = x;
     int* p = x.allocate(1);
     ASSERT_EQ (p, &y[4]);
     ASSERT_EQ (p[1], -4);
@@ -179,7 +179,7 @@ TEST(TestAllocator2, allocate_3) {
 TEST(TestAllocator2, allocate_coalesce) {
     //shows that allocate coalesces blocks that are too small to be free
     Allocator<int, 16> x;
-    const Allocator<int, 100>& y = x;
+    const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
     ASSERT_EQ (p, &y[4]);
     ASSERT_EQ (p[2], -8);
