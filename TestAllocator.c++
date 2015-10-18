@@ -195,13 +195,13 @@ TEST(TestAllocator2, allocate_multiple) {
     int* p = x.allocate(5); //this should coalesce remaining space
     ASSERT_EQ (p, &y[72]);
     ASSERT_EQ (y[0], -16);
-    ASSERT_EQ (p[20], -16);
-    ASSERT_EQ (p[24], -8);
-    ASSERT_EQ (p[36], -8);
-    ASSERT_EQ (p[40], -20);
-    ASSERT_EQ (p[64], -20);
-    ASSERT_EQ (p[68], -24);
-    ASSERT_EQ (p[96], -24);
+    ASSERT_EQ (y[20], -16);
+    ASSERT_EQ (y[24], -8);
+    ASSERT_EQ (y[36], -8);
+    ASSERT_EQ (y[40], -20);
+    ASSERT_EQ (y[64], -20);
+    ASSERT_EQ (y[68], -24);
+    ASSERT_EQ (y[96], -24);
 }
 
 
