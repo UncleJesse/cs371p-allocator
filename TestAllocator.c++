@@ -129,6 +129,12 @@ TEST(TestAllocator2, default_constructor_smallest) {
     ASSERT_EQ(x[8], 4);
 }
 
+TEST(TestAllocator2, default_constructor_odd) {
+    const Allocator<int, 13> x;
+    ASSERT_EQ(x[0], 5);
+    ASSERT_EQ(x[9], 5);
+}
+
 TEST(TestAllocator2, default_constructor_bad_alloc) {
     try {
     const Allocator<int, 11> x; //should not get to the next line
