@@ -150,7 +150,9 @@ TEST(TestAllocator2, default_constructor_bad_alloc) {
 
 TEST(TestAllocator2, allocate_1) {
     Allocator<int, 100> x;
+    Allocator<int, 100>& y = x;
     int* p = x.allocate(23);
+    ASSERT_EQ (p, &y[0])
     ASSERT_EQ (p[-1], -92); //uses the pointer to check sentinel
     ASSERT_EQ (p[23], -92);
 }
