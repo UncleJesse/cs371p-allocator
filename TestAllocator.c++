@@ -29,7 +29,8 @@ struct TestAllocator1 : testing::Test {
     typedef          A             allocator_type;
     typedef typename A::value_type value_type;
     typedef typename A::size_type  size_type;
-    typedef typename A::pointer    pointer;};
+    typedef typename A::pointer    pointer;
+};
 
 typedef testing::Types<
             std::allocator<int>,
@@ -54,7 +55,9 @@ TYPED_TEST(TestAllocator1, test_1) {
         x.construct(p, v);
         ASSERT_EQ(v, *p);
         x.destroy(p);
-        x.deallocate(p, s);}}
+        x.deallocate(p, s);
+    }
+}
 
 TYPED_TEST(TestAllocator1, test_10) {
     typedef typename TestFixture::allocator_type allocator_type;
@@ -72,18 +75,24 @@ TYPED_TEST(TestAllocator1, test_10) {
         try {
             while (p != e) {
                 x.construct(p, v);
-                ++p;}}
+                ++p;
+            }
+        }
         catch (...) {
             while (b != p) {
                 --p;
                 x.destroy(p);}
             x.deallocate(b, s);
-            throw;}
+            throw;
+        }
         ASSERT_EQ(s, std::count(b, e, v));
         while (b != e) {
             --e;
-            x.destroy(e);}
-        x.deallocate(b, s);}}
+            x.destroy(e);
+        }
+        x.deallocate(b, s);
+    }
+}
 
 // --------------
 // TestAllocator2
@@ -91,42 +100,54 @@ TYPED_TEST(TestAllocator1, test_10) {
 
 TEST(TestAllocator2, const_index) {
     const Allocator<int, 100> x;
-    ASSERT_EQ(x[0], 92);}
+    ASSERT_EQ(x[0], 92);
+}
 
 TEST(TestAllocator2, index) {
     Allocator<int, 100> x;
-    ASSERT_EQ(x[0], 92);}
+    ASSERT_EQ(x[0], 92);
+}
+    
+// --------------
+// The remaining of TestAllocator2 tests 
+// my Allocator class's functions
+// --------------
 
 /**
- * Tests default constructor with a big and small number, as
- * well as a number that is too small 
+ * Tests the default constructor 
  */
 TEST(TestAllocator2, default_constructor) {
     const Allocator<int, 200> x;
+    //checks sentinels
     ASSERT_EQ(x[0], 192);
-    ASSERT_EQ(x[196], 192);}
+    ASSERT_EQ(x[196], 192);
+}
 
 TEST(TestAllocator2, default_constructor_smallest) {
     const Allocator<int, 12> x;
     ASSERT_EQ(x[0], 4);
-    ASSERT_EQ(x[8], 4);}
+    ASSERT_EQ(x[8], 4);
+}
 
 TEST(TestAllocator2, default_constructor_bad_alloc) {
     try {
-    const Allocator<int, 2> x;
+    const Allocator<int, 11> x; //should not get to the next line
     ASSERT_TRUE(false);}
     catch(const std::bad_alloc& e){ 
         ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
     }
 }
 
+/**
+ * Tests the allocate function 
+ */
+
 TEST(TestAllocator2, allocate_1) {
     Allocator<int, 100> x;
     int* p = x.allocate(23);
-    ASSERT_EQ (p[-1], -92);
+    ASSERT_EQ (p[-1], -92); //uses the pointer to check sentinel
     ASSERT_EQ (p[23], -92);
-
-    }
+}
 
 TEST(TestAllocator2, allocate_2) {
     Allocator<int, 12> x;
@@ -143,7 +164,8 @@ TEST(TestAllocator2, allocate_3) {
 
     }
 
-TEST(TestAllocator2, allocate_coalesce) {  //shows that allocate adds blocks that are too small
+TEST(TestAllocator2, allocate_coalesce) {
+    //shows that allocate coalesces blocks that are too small to be free
     Allocator<int, 16> x;
     int* p = x.allocate(1);
     ASSERT_EQ (p[2], -8);
