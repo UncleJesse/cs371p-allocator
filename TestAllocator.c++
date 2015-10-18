@@ -176,6 +176,19 @@ TEST(TestAllocator2, allocate_3) {
     ASSERT_EQ (y[20], 72);
     }
 
+TEST(TestAllocator2, allocate_4) {
+    Allocator<int, 60> x;
+    const Allocator<int, 60>& y = x;
+    x.allocate(3);
+    int* k = x.allocate(3);
+    x.allocate(3);
+    x.deallocate(k, 3);
+    int* b = x.allocate(3);
+    ASSERT_EQ (b, &y[24]);
+    ASSERT_EQ (y[20], -12);
+    ASSERT_EQ (y[36], -12);
+    }
+
 TEST(TestAllocator2, allocate_coalesce) {
     //shows that allocate coalesces blocks that are too small to be free
     Allocator<int, 16> x;
@@ -239,6 +252,35 @@ TEST(TestAllocator2, allocate_bad_alloc_3) {
     }
 }
 
+TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address
+    Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
+    x.allocate(3);
+    int* k = x.allocate(3);
+    x.allocate(3);
+    x.deallocate(k, 3);
+    int* b = x.allocate(3);
+    ASSERT_EQ (b, &y[24]);
+    ASSERT_EQ (y[20], -12);
+    ASSERT_EQ (y[36], -12);
+    }
+
+TEST(TestAllocator2, allocate_first_fit_2) { //allocates at deallocated address with correct fit
+    Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
+    x.allocate(3);
+    int* k = x.allocate(2);
+    x.allocate(3);
+    int* q = x.allocate(3);
+    x.allocate(3);
+    x.deallocate(k, 2);
+    x.deallocate(q, 3);
+    int* b = x.allocate(3);
+    ASSERT_EQ (b, &y[60]);
+    ASSERT_EQ (y[56], -12);
+    ASSERT_EQ (y[72], -12);
+    }
+
 /**
  * Tests the deallocate function 
  */
@@ -259,31 +301,47 @@ TEST(TestAllocator2, deallocate_2) {
     ASSERT_EQ(y[0], 4);
 }
 
-TEST(TestAllocator2, deallocate_coalesce_1) {
-    Allocator<int, 100> x;
-    const Allocator<int, 100>& y = x;
-    int* p = x.allocate(1);
-    int* k = x.allocate(2);
-    x.deallocate(k, 1);
-    x.deallocate(p, 2);
-    ASSERT_EQ(y[0], 92);
-    ASSERT_EQ(y[8], 0);
-    ASSERT_EQ(y[12], 0);
-    ASSERT_EQ(y[20], 0);
-    ASSERT_EQ(y[96], 92);
+TEST(TestAllocator2, deallocate_coalesce_front) {
+    Allocator<int, 68> x;
+    const Allocator<int, 68>& y = x;
+    int* p = x.allocate(5);
+    int* k = x.allocate(8);
+    x.deallocate(k, 8);
+    x.deallocate(p, 5);
+    ASSERT_EQ(y[0], 60);
+    ASSERT_EQ(y[24], 0);
+    ASSERT_EQ(y[28], 0);
+    ASSERT_EQ(y[64], 60);
 }
 
-TEST(TestAllocator2, deallocate_coalesce_2) {
+TEST(TestAllocator2, deallocate_coalesce_behind) {
+    Allocator<int, 36> x;
+    const Allocator<int, 36>& y = x;
+    int* p = x.allocate(2);
+    int* k = x.allocate(3);
+    x.deallocate(p, 2);
+    x.deallocate(k, 3);
+    ASSERT_EQ(y[0], 28);
+    ASSERT_EQ(y[12], 0);
+    ASSERT_EQ(y[16], 0);
+    ASSERT_EQ(y[32], 28);
+}
+
+TEST(TestAllocator2, deallocate_coalesce_both_sides) {
     Allocator<int, 100> x;
     const Allocator<int, 100>& y = x;
-    int* p = x.allocate(1);
-    int* k = x.allocate(1);
-    x.deallocate(p, 1);
-    x.deallocate(k, 1);
+    int* p = x.allocate(2);
+    int* k = x.allocate(3);
+    int* l = x.allocate(1);
+    x.deallocate(p, 2);
+    x.deallocate(l, 1);
+    x.deallocate(k, 3);
     ASSERT_EQ(y[0], 92);
-    ASSERT_EQ(y[8], 0);
     ASSERT_EQ(y[12], 0);
-    ASSERT_EQ(y[20], 0);
+    ASSERT_EQ(y[16], 0);
+    ASSERT_EQ(y[32], 0);
+    ASSERT_EQ(y[36], 0);
+    ASSERT_EQ(y[44], 0);
     ASSERT_EQ(y[96], 92);
 }
 
