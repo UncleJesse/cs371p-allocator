@@ -75,30 +75,29 @@ class Allocator {
             int i = 0;
             while (i < N){
                 int s = (*this)[i];
-                if (s == 0){ // invalid sentinal value
-                    std::cout << "1st" << std::endl;
+                if (s == 0){ // invalid sentinel value
                     throw std::logic_error("Invalid sentinal value");
                     return false;
                 }
                 else if (s < 0) {  //skips past allocated block
                     int r = (*this)[i - s + sizeof(int)];
                     if (s != r){
-                        std::cout << "2nd" << std::endl;
-                        return false; // make sure that both sentinals match
+                        throw std::logic_error("Sentinels don't match");
+                        return false; // make sure that both sentinels match
                     }
-                    i += -s + (2 * sizeof(int)); // increment i past second sentinal, to the sentinal of the next block
+                    i += -s + (2 * sizeof(int)); // increment i past second sentinel, to the sentinel of the next block
                 }
                 //checks unallocated block to make sure that there is enough 
                 //space for two sentinels and at least 1 T
                 else if (s > 0) {  
                     if (s < sizeof(T)){ // if block is too small, return false, block is invalid
-                        std::cout << "3rd" << std::endl;
+                        throw std::logic_error("Block too small");
                         return false;
                     }
                     else{
                         int q = (*this)[i + s + sizeof(int)];
                         if(s != q){
-                            std::cout << "4th" << std::endl;
+                            throw std::logic_error("Sentinels not matching");
                             return false; // both sentinals for this block should match
                         }
                         i += s + (2 * sizeof(int)); // increment i to next block
@@ -106,7 +105,7 @@ class Allocator {
                 }
                 // i should not be greater than N, once we've accounted for all blocks, i should be equal to N
                 if (i > N){ 
-                    std::cout << "5th" << std::endl;
+                    throw std::logic_error("Out of bounds");
                     return false;
                 }
             }

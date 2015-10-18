@@ -346,10 +346,59 @@ TEST(TestAllocator2, deallocate_coalesce_both_sides) {
 }
 
 TEST(TestAllocator2, valid_1) {
-    Allocator<int, 12> x;
-    int* p = x.allocate(1);
-    p[-1] = 0; 
-    x.destroy(p);
+    try{
+        Allocator<int, 12> x;
+        int* p = x.allocate(1);
+        p[-1] = 0; 
+        x.destroy(p);
+        ASSERT_TRUE(false);
+    }
+    catch(const std::logic_error& e){ 
+        ASSERT_EQ(strcmp(e.what(), "Invalid sentinal value"), 0); 
+    }
+}
+
+TEST(TestAllocator2, valid_2) {
+    try{
+        Allocator<int, 12> x;
+        int* p = x.allocate(1);
+        p[1] = 1; 
+        x.destroy(p);
+        ASSERT_TRUE(false);
+    }
+    catch(const std::logic_error& e){ 
+        ASSERT_EQ(strcmp(e.what(), "Sentinels don't match"), 0); 
+    }
+}
+
+TEST(TestAllocator2, valid_3) {
+    try{
+        Allocator<double, 16> x;
+        double* q = x.allocate(1);
+        int* p = reinterpret_cast<int*>(&q[0]);
+        x.deallocate(q, 1);
+        p[-1] = 4; 
+        p[1] = 4;
+        x.destroy(q);
+        ASSERT_TRUE(false);
+    }
+    catch(const std::logic_error& e){ 
+        ASSERT_EQ(strcmp(e.what(), "Block too small"), 0); 
+    }
+}
+
+TEST(TestAllocator2, valid_4) {
+    try{
+        Allocator<int, 12> x;
+        int* p = x.allocate(1);
+        x.deallocate(p, 1);
+        p[1] = 1; 
+        x.destroy(p);
+        ASSERT_TRUE(false);
+    }
+    catch(const std::logic_error& e){ 
+        ASSERT_EQ(strcmp(e.what(), "Sentinels not matching"), 0); 
+    }
 }
 
 // --------------
