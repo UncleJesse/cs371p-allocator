@@ -219,6 +219,7 @@ class Allocator {
             }
             else {
                 sentinel_1 = -sentinel_1;
+                std::cout << sentinel_1 << std::endl;
                 sentinel_2 = -sentinel_2;
             }
 
