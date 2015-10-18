@@ -152,9 +152,9 @@ TEST(TestAllocator2, allocate_1) {
     Allocator<int, 100> x;
     const Allocator<int, 100>& y = x;
     int* p = x.allocate(23);
-    ASSERT_EQ (p, &y[0]);
-    ASSERT_EQ (p[-1], -92); //uses the pointer to check sentinel
-    ASSERT_EQ (p[23], -92);
+    ASSERT_EQ (p, &y[1]);
+    ASSERT_EQ (y[0], -92); //uses the pointer to check sentinel
+    ASSERT_EQ (y[96], -92);
 }
 
 TEST(TestAllocator2, allocate_2) {
