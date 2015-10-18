@@ -205,7 +205,7 @@ TEST(TestAllocator2, deallocate_1) {
     Allocator<int, 100> x;
     int* p = x.allocate(23);
     x.deallocate(p, 1);
-    
+    ASSERT_EQ(p[-1], 92);
     }
 
 // --------------
