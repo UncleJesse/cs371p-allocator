@@ -194,28 +194,30 @@ class Allocator {
         void deallocate (pointer p, size_type n) {
             int i = (int)((char*)p - a); //gets index of pointer in allocator
 
-            if (i < sizeof(int) || i > N - sizeof(int)){  //sees that pointer p is within a[N]
+            if (i < sizeof(int) || i >= N - sizeof(int)){  //sees that pointer p is within a[N]
 
                 throw std::invalid_argument("Pointer p is invalid");
             }
 
             int& sentinel_1 = (*this)[i - 4];
-            std::cout << sentinel_1 << std::endl;
+            int* b = &sentinel_1 + sentinel_1;
+            //makes sure that the second sentinel is in a[N] before assigning value
+            if (b > a + N || b < a) {  
+                throw std::invalid_argument("Pointer p is invalid");
+            }
             int& sentinel_2 = (*this)[i + (-sentinel_1)];
 
-            if (sentinel_1 > 0 || sentinel_2 > 0){
+            if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){
                 throw std::invalid_argument("Pointer p is invalid");
             }
 
-            if (!(i + (-sentinel_1) >= N)) {
-                int& sentinel_3 = (*this)[i + (-sentinel_1) + sizeof(int)];
-                if (sentinel_3 > 0)
-                {
-                    int v = sentinel_3 + (-sentinel_1) + 2 * sizeof(int);
-                    sentinel_1 = v;
-                    int& sentinel_4 = (*this)[i + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
-                    sentinel_4 = v;
-                }
+            int& sentinel_3 = (*this)[i + (-sentinel_1) + sizeof(int)];
+            
+            if (sentinel_3 > 0) {
+                int v = sentinel_3 + (-sentinel_1) + 2 * sizeof(int);
+                sentinel_1 = v;
+                int& sentinel_4 = (*this)[i + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
+                sentinel_4 = v;
             }
             else {
                 sentinel_1 = -sentinel_1;
