@@ -166,6 +166,8 @@ TEST(TestAllocator2, allocate_multiple) {
     ASSERT_EQ (p[23], -24);
 }
 
+
+
 TEST(TestAllocator2, allocate_bad_alloc_1) {
     try {
     Allocator<int, 100> x;
@@ -198,6 +200,13 @@ TEST(TestAllocator2, allocate_bad_alloc_3) {
         ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
     }
 }
+
+TEST(TestAllocator2, deallocate_1) {
+    Allocator<int, 100> x;
+    int* p = x.allocate(23);
+    x.deallocate(p, 1);
+    
+    }
 
 // --------------
 // TestAllocator3

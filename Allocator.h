@@ -192,18 +192,37 @@ class Allocator {
          * <your documentation>
          */
         void deallocate (pointer p, size_type n) {
-            if (p == nullptr){
+            int i = (int)((char*)p - a); //gets index of pointer in allocator
+
+            if (i < sizeof(int) || i > N - sizeof(int)){  //sees that pointer p is within a[N]
+
                 throw std::invalid_argument("Pointer p is invalid");
             }
-            int* ip = reinterpret_cast<int*>(p);
-            int x = -ip[-1];
-            int y = x/sizeof(T);
-            ip[-1] = x;
-            p[y] = x;
-            std::cout << x << std::endl;
-            std::cout << y << std::endl;
-            std::cout << ip[-1] << std::endl;
-            std::cout << p[y] << std::endl;
+
+            int& sentinel_1 = (*this)[i - 4];
+            int& sentinel_2 = (*this)[i + (-sentinel_1)];
+
+            if (sentinel_1 > 0 || sentinel_2 > 0){
+                throw std::invalid_argument("Pointer p is invalid");
+            }
+
+            if (!(i + (-sentinel_1) >= N)) {
+                int& sentinel_3 = (*this)[i + (-sentinel_1) + sizeof(int)];
+                if (sentinel_3 > 0)
+                {
+                    int v = sentinel_3 + (-sentinel_1);
+                    sentinel_1 = v;
+                    int& sentinel_4 = (*this)[i + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
+                    sentinel_4 = v;
+                    std::cout << (*this)[0] << std::endl;
+                }
+            }
+            else {
+                sentinel_1 = -sentinel_1;
+                sentinel_2 = -sentinel_2;
+            }
+
+            //std::cout << i << std::endl;
             assert(valid());}
 
         // -------
