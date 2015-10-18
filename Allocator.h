@@ -200,9 +200,9 @@ class Allocator {
             }
 
             int& sentinel_1 = (*this)[i - 4];
-            int* b = &sentinel_1 + sentinel_1;
-            //makes sure that the second sentinel is in a[N] before assigning value
-            if (b > a + N || b < a) {  
+            int b = i + -sentinel_1;
+            //checks that sentinel_2 is in a[N] and sentinel_1 is negative
+            if (b > N || b < i || sentinel_1 > 0) {  
                 throw std::invalid_argument("Pointer p is invalid");
             }
             int& sentinel_2 = (*this)[i + (-sentinel_1)];
