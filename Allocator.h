@@ -214,7 +214,6 @@ class Allocator {
                     sentinel_1 = v;
                     int& sentinel_4 = (*this)[i + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
                     sentinel_4 = v;
-                    std::cout << (*this)[0] << std::endl;
                 }
             }
             else {
