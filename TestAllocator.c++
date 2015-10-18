@@ -193,7 +193,7 @@ TEST(TestAllocator2, allocate_multiple) {
     x.allocate(2);   
     x.allocate(5);
     int* p = x.allocate(5);
-    ASSERT_EQ (p, &y[80]);
+    ASSERT_EQ (p, &y[72]);
     /*
     ASSERT_EQ (p[-1], -16);
     ASSERT_EQ (p[4], -16);
