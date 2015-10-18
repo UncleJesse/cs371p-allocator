@@ -69,39 +69,12 @@ class Allocator {
         /**
          * O(1) in space
          * O(n) in time
-         *iterate through Allocator's array and ensure that only valid blocks
-         *have been allocated and the amount of leftover space is also valid
+         * <your documentation>
          */
-    bool valid() const{
-        int i = 0;
-        while (i < N){
-            int s = (*this)[i];
-            if (s == 0) // invalid sentinal value
-                return false;
-            else if (s < 0) {  //skips past allocated block
-                int r = (*this)[i + s + sizeof(int)];
-                if (s != r)
-                    return false; // make sure that both sentinals match
-                i += -s + (2 * sizeof(int)); // increment i past second sentinal, to the sentinal of the next block
-            }
-            //checks unallocated block to make sure that there is enough 
-            //space for two sentinels and at least 1 T
-            else if (s > 0) {  
-                if (s < sizeof(T) + 2 * sizeof(int)) // if block is too small, return false, block is invalid
-                    return false;
-                else{
-                    int q = (*this)[i + s + sizeof(int)];
-                    if(s != q)
-                        return false; // both sentinals for this block should match
-                    i += s + (2 * sizeof(int)); // increment i to next block
-                }
-            }
-            // i should not be greater than N, once we've accounted for all blocks, i should be equal to N
-            if (i > N) 
-                return false;
-        }    
-        return true;
-    }
+        bool valid () const {
+            
+            return true;}
+
         /**
          * O(1) in space
          * O(1) in time
@@ -233,35 +206,52 @@ class Allocator {
                 throw std::invalid_argument("Pointer p is invalid");
             }
             int& sentinel_2 = (*this)[e];
-            std::cout << b << " " << e << std::endl;
-            if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){
+
+            if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){ 
                 throw std::invalid_argument("Pointer p is invalid");
             }
 
-            /*if (b > sizeof(int) && (*this)[b - 2 * sizeof(int)] > 0) { //coalesces free block behind
-                int q = b - 2 * sizeof(int);
-                int& sentinel_3 = (*this)[q];
-                int& sentinel_4 = (*this)[q - sentinel_3 - sizeof(int)];
-                int v = -sentinel_2 + sentinel_4 + 2 * sizeof(int);
-                sentinel_2 = v;
+            if (b > sizeof(int)  && (*this)[b - 2 * sizeof(int)] > 0 && e < (N - sizeof(int)) && (*this)[e + sizeof(int)] > 0) { //coalesces free blocks on both sides
+                int oe = b - 2 * sizeof(int);
+                int ob = e + sizeof(int);
+                int& sentinel_l = (*this)[oe];
+                int& sentinel_r = (*this)[ob];
+                int v = sentinel_l + sentinel_r + -sentinel_1 + 4 * sizeof(int);
+                (*this)[oe - sentinel_l - sizeof(int)] = v;
+                (*this)[ob + sentinel_r + sizeof(int)] = v;
+                sentinel_l = 0;
+                sentinel_r = 0;
+                sentinel_1 = 0;
+                sentinel_2 = 0;
+            }
+
+            else if (b > sizeof(int)  && (*this)[b - 2 * sizeof(int)] > 0) { //coalesces free block behind
+                int oe = b - 2 * sizeof(int);
+                int& sentinel_3 = (*this)[oe];
+                int& sentinel_4 = (*this)[oe - sentinel_3 - sizeof(int)];
+                int v = -sentinel_1 + sentinel_3 + 2 * sizeof(int);
                 sentinel_4 = v;
+                sentinel_2 = v;
                 sentinel_3 = 0;
                 sentinel_1 = 0;
             }
-            
-            else if (e < (N - sizeof(int)) && (*this)[e + sizeof(int)] > 0) { //coalesces free block in front
-                int& sentinel_3 = (*this)[e + sizeof(int)];
-                int v = sentinel_3 + (-sentinel_1) + 2 * sizeof(int);
+
+            else if (e < (N - sizeof(int)) && (*this)[e + sizeof(int)] > 0) //coalesces free block in front
+            {
+                int ob = e + sizeof(int);
+                int& sentinel_3 = (*this)[ob];
+                int& sentinel_4 = (*this)[ob + sizeof(int) + sentinel_3];
+                int v = -sentinel_1 + sentinel_3 + 2 * sizeof(int);
                 sentinel_1 = v;
-                int& sentinel_4 = (*this)[b + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
                 sentinel_4 = v;
-                sentinel_2 = 0;
                 sentinel_3 = 0;
+                sentinel_2 = 0;
             }
+
             else {
                 sentinel_1 = -sentinel_1;
                 sentinel_2 = -sentinel_2;
-            }*/
+            } 
 
             //std::cout << b << std::endl;
             assert(valid());}
