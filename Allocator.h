@@ -210,7 +210,7 @@ class Allocator {
                 int& sentinel_3 = (*this)[i + (-sentinel_1) + sizeof(int)];
                 if (sentinel_3 > 0)
                 {
-                    int v = sentinel_3 + (-sentinel_1);
+                    int v = sentinel_3 + (-sentinel_1) + 2 * sizeof(int);
                     sentinel_1 = v;
                     int& sentinel_4 = (*this)[i + (-sentinel_1) + 2* sizeof(int) + sentinel_3];
                     sentinel_4 = v;
