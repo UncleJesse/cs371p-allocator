@@ -251,8 +251,7 @@ TEST(TestAllocator2, deallocate_1) {
     ASSERT_EQ(y[0], 92);
 }
 
-//make deall out of bounds test (need to erase values)
-//24,-16..-16,24
+//-12...-12,-16...-16,a...a
 
 // --------------
 // TestAllocator3
