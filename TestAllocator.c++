@@ -263,7 +263,7 @@ TEST(TestAllocator2, deallocate_coalesce_1) {
     Allocator<int, 100> x;
     const Allocator<int, 100>& y = x;
     int* p = x.allocate(1);
-    int* k = x.allocate(1);
+    int* k = x.allocate(2);
     x.deallocate(k, 1);
     x.deallocate(p, 2);
     ASSERT_EQ(y[0], 92);

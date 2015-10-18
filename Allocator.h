@@ -200,19 +200,18 @@ class Allocator {
             }
 
             int& sentinel_1 = (*this)[b - 4];
-            std::cout << sentinel_1 << std::endl;
             int e = b + -sentinel_1;
             //checks that sentinel_2 is in a[N] and sentinel_1 is negative
             if (e > N || e < b || sentinel_1 >= 0) {  
                 throw std::invalid_argument("Pointer p is invalid");
             }
             int& sentinel_2 = (*this)[e];
-            std::cout << sentinel_2 << std::endl;
+            std::cout << b << " " << e << std::endl;
             if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){
                 throw std::invalid_argument("Pointer p is invalid");
             }
 
-            if (b > sizeof(int) && (*this)[b - 2 * sizeof(int)] > 0) { //coalesces free block behind
+            /*if (b > sizeof(int) && (*this)[b - 2 * sizeof(int)] > 0) { //coalesces free block behind
                 int q = b - 2 * sizeof(int);
                 int& sentinel_3 = (*this)[q];
                 int& sentinel_4 = (*this)[q - sentinel_3 - sizeof(int)];
@@ -235,7 +234,7 @@ class Allocator {
             else {
                 sentinel_1 = -sentinel_1;
                 sentinel_2 = -sentinel_2;
-            }
+            }*/
 
             //std::cout << b << std::endl;
             assert(valid());}
