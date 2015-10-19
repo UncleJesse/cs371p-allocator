@@ -41,6 +41,7 @@ clean:
 	rm -f *.gcov
 	rm -f TestAllocator
 	rm -f TestAllocator.tmp
+	rm -f other
 
 config:
 	git config -l
