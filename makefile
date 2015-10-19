@@ -7,6 +7,7 @@ FILES :=                              \
     html                              \
     TestAllocator.c++                   \
     TestAllocator.out
+    other.c++
 
 CXX        := g++-4.8
 CXXFLAGS   := -pedantic -std=c++11 -Wall
@@ -74,6 +75,10 @@ Doxyfile:
 
 TestAllocator: Allocator.h TestAllocator.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) TestAllocator.c++ -o TestAllocator $(LDFLAGS)
+	
+other: Allocator.h other.c++
+	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) other.c++ -o other $(LDFLAGS)
+	./other
 
 TestAllocator.tmp: TestAllocator
 	$(VALGRIND) ./TestAllocator                                       >  TestAllocator.tmp 2>&1
