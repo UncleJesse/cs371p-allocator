@@ -6,7 +6,7 @@ FILES :=                              \
     Allocator.log                       \
     html                              \
     TestAllocator.c++                   \
-    TestAllocator.out
+    TestAllocator.out			\
     other.c++
 
 CXX        := g++-4.8
