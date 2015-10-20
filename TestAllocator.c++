@@ -98,12 +98,6 @@ TYPED_TEST(TestAllocator1, test_10) {
 // TestAllocator2
 // --------------
 
-TEST(TestMyAllocator2, zero_allocate)
-{	
-	std::allocator<int> a;
-	int* p = a.allocate(0);
-}
-
 TEST(TestAllocator2, const_index) {
     const Allocator<int, 100> x;
     ASSERT_EQ(x[0], 92);
