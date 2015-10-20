@@ -98,6 +98,19 @@ TYPED_TEST(TestAllocator1, test_10) {
 // TestAllocator2
 // --------------
 
+TEST(TestAllocator3, allocate_2) {
+    Allocator<int, 10000> y;
+    const Allocator<int, 10000>& x = y;
+    ASSERT_EQ(x[0], 9992);
+    ASSERT_EQ(x[9996], 9992);
+    y.allocate(400);
+    ASSERT_EQ(x[0], -1600);
+    ASSERT_EQ(x[1604], -1600);
+    ASSERT_EQ(x[1608], 8384);
+    ASSERT_EQ(x[9996], 8384);
+
+}
+
 TEST(TestAllocator2, const_index) {
     const Allocator<int, 100> x;
     ASSERT_EQ(x[0], 92);
