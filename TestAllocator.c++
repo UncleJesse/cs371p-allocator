@@ -571,7 +571,7 @@ TEST(TestAllocator2, deallocate_invalid_4) {
 }
 
 /**
- * Tests the valid function by making an invalid array and catching the exceptionsp0
+ * Tests the valid function by making an invalid array and catching the exceptions upon the destroy function calling valid
  */
 
 TEST(TestAllocator2, valid_1) {
