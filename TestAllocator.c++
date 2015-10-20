@@ -98,6 +98,23 @@ TYPED_TEST(TestAllocator1, test_10) {
 // TestAllocator2
 // --------------
 
+TEST(TestAllocator6, deallocate_throws_invalid_argument) {
+    Allocator<int, 60> x;
+
+    size_t s = 3;
+    int* a = x.allocate(3);
+
+    try {
+        x.deallocate(a + 5, s);
+        ASSERT_TRUE(false);
+    }
+    catch (invalid_argument& ia) {
+        ASSERT_EQ(1, 1);
+    }
+
+    ASSERT_TRUE(x.valid());
+}
+
 TEST(TestAllocator2, const_index) {
     const Allocator<int, 100> x;
     ASSERT_EQ(x[0], 92);
