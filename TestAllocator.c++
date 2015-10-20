@@ -152,6 +152,35 @@ TEST(TestAllocator2, not_equal_3) {
     Allocator<char, 9> y;
     ASSERT_FALSE(x != y);
 }
+
+TEST(TestAllocator2, construct_1) {
+    Allocator<int, 16> x;
+    Allocator<int, 16>& y = x;
+    int* p = x.allocate(1);
+    cout << sizeof(p[0]) << endl;
+    x.construct(p, 7);
+    cout << sizeof(p[0]) << endl;
+    ASSERT_EQ(p[0], 7);
+    ASSERT_EQ(y[4], 7);
+}
+
+TEST(TestAllocator2, construct_2) {
+    Allocator<double, 100> x;
+    Allocator<double, 100>& y = x;
+    double* p = x.allocate(1);
+    x.construct(p, 7);
+    ASSERT_EQ(p[0], 7);
+    ASSERT_EQ(y[4], 7);
+}
+
+TEST(TestAllocator2, construct_3) {
+    Allocator<int, 16> x;
+    Allocator<int, 16>& y = x;
+    int* p = x.allocate(1);
+    x.construct(p, 7);
+    ASSERT_EQ(p[0], 7);
+    ASSERT_EQ(y[4], 7);
+}
     
 /**
  * Tests the default constructor 
