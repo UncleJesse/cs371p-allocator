@@ -108,6 +108,15 @@ TEST(TestAllocator2, index) {
     ASSERT_EQ(x[0], 92);
 }
 
+// --------------
+// The remaining of TestAllocator2 tests 
+// my Allocator class's functions
+// --------------
+
+/**
+ * Tests equality operators 
+ */
+
 TEST(TestAllocator2, equal_1) {
     Allocator<int, 100> x;
     Allocator<int, 100> y;
@@ -129,26 +138,21 @@ TEST(TestAllocator2, equal_3) {
 TEST(TestAllocator2, not_equal_1) {
     Allocator<int, 100> x;
     Allocator<int, 100> y;
-    ASSERT_EQ(x, y);
+    ASSERT_FALSE(x != y);
 }
 
 TEST(TestAllocator2, not_equal_2) {
     Allocator<int, 16> x;
-    Allocator<int, 17> y;
-    ASSERT_NE(x, y);
+    Allocator<int, 16> y;
+    ASSERT_FALSE(x != y);
 }
 
 TEST(TestAllocator2, not_equal_3) {
     Allocator<char, 9> x;
     Allocator<char, 9> y;
-    ASSERT_EQ(x, y);
+    ASSERT_FALSE(x != y);
 }
     
-// --------------
-// The remaining of TestAllocator2 tests 
-// my Allocator class's functions
-// --------------
-
 /**
  * Tests the default constructor 
  */
