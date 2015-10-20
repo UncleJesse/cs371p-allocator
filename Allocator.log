@@ -1,0 +1,660 @@
+commit e556a31c113679bfce9dd2c944a3659242fc3a27
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 18:35:32 2015 -0500
+
+    made TestAllocator.out
+
+commit f004c3ecb256d38f87d427bef2da3ffb30b069a5
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 18:23:46 2015 -0500
+
+    Create .gitignore
+
+commit 30253d6313894c366279ed83b3b09dd511997c7c
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 18:16:03 2015 -0500
+
+    Update TestAllocator.c++
+
+commit ad91faed7fe2eae1876a667fd4ad693cb78577b5
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 18:11:41 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 9d2d665fe3617673b2260ead7b6deeae3375bcc3
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 17:58:54 2015 -0500
+
+    Update Allocator.h
+
+commit c0ae12cc15228bc9207171443ebe7d9e2f016f7a
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 15:24:34 2015 -0500
+
+    Update Allocator.h
+
+commit daa1a1e225cb5f528b2cdb5f4ef7f3f8fad2e8ab
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 15:05:51 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 80acb2d66c462f3d457d80bb6e0665f4d6489313
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:59:53 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 55cb7588948010ecbe1f11a1459ea54121722741
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:58:14 2015 -0500
+
+    Update TestAllocator.c++
+
+commit a372bc7681039c454e16eb4d4de3603420463b27
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:56:59 2015 -0500
+
+    Update TestAllocator.c++
+
+commit c00d1f3be8a1a7fcaead1866df10817365bdefe3
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:55:27 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 857b3815c54e050358a0564f75dc9db5e9047997
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:53:20 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 6ca9c2db0443caaecbc5adf8709dc0a67fe97ceb
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:49:10 2015 -0500
+
+    Update TestAllocator.c++
+
+commit f100b4c7cf8ef0f2bfa1c331020b1e97314e9cc3
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:48:28 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 7f6794297c232de3efca62a62a2b234887e4c71d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:47:46 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 868e81b4d4ccacc61c37bda89a99acf40eacdc6b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:39:19 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 5538a4ccf4e21e3badb33c6bd56d1d874c336b7d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:36:25 2015 -0500
+
+    Update TestAllocator.c++
+
+commit f3509a757b043ec9bc43b821eed932ec6dd9d523
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:35:45 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 63b335ecf9268cc012d633a07a1f065970f8bdb8
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:34:25 2015 -0500
+
+    Update TestAllocator.c++
+
+commit aa264c25e11529ecc6773775a7bed65506d28e5f
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:24:46 2015 -0500
+
+    Update TestAllocator.c++
+
+commit f5ddc5a151568cdc3579955e097274ce42f89e9b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:22:03 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 44945a6d11df25bb9ec1e91cae24889b067cb104
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:21:52 2015 -0500
+
+    Update TestAllocator.c++
+
+commit a3b8e4453f3e42f69a17340f93f15e24b0b24ed7
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:19:57 2015 -0500
+
+    Update TestAllocator.c++
+
+commit cea110796d94f72b1236368adc4b9f13ed84038d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:19:22 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 2edf6ac77c452c05e95ece1103263483c64af95a
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:18:09 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 41ab2f77da86b13902a0dc54474855a10d9c376b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:16:40 2015 -0500
+
+    Update TestAllocator.c++
+
+commit e5581cafcc1dc23c099991fb93dccbb029555a6d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 14:15:19 2015 -0500
+
+    Update TestAllocator.c++
+
+commit dc8f8e48a8ca676d24f2a99e7852866827f18de5
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:55:08 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 4cd18e24dc9844b9a7bc33ffa0e9c129ddf666af
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:54:30 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 3c1cd0026100373e18ed3989abe33d9c8ad3363e
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:51:26 2015 -0500
+
+    Update TestAllocator.c++
+
+commit eca7937cbcbd284adb46fc109b0c1e3ec2bfb862
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:42:33 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 52800950733237dda46c66f6be38ef18ddedba86
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:41:34 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 9936398da8edccb086274cd5824533c9e156a349
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:38:48 2015 -0500
+
+    Update TestAllocator.c++
+
+commit f21b9fa7482aaa8ce1080b30d288a81775f3d5ad
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:32:32 2015 -0500
+
+    Update TestAllocator.c++
+
+commit b3010ada84caf4610bf8140762af366135200eb0
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:29:36 2015 -0500
+
+    Update TestAllocator.c++
+
+commit f3cf43eb427fb19b81df3f806b1b0d8048abe383
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:29:33 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 5c4117a70e12b213b9d6e6d09772ea477e0b47eb
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:28:49 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 8f39830eff74a22354c3e8bb26cdab7bfe133c28
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:26:35 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 180af8c5e173cfadca090aabc417d695c2875046
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:23:17 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 33612bb93ca212dae8669dd3bf8bd59aa00ccd74
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:16:49 2015 -0500
+
+    Update TestAllocator.c++
+
+commit cb4257325f8faba9728b82903c99c3c3916cd598
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:16:00 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 76289cd4e415d0b778fa9d6ba61c7679f1cc710f
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:15:17 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 2766956a6f6e5bebf91e0cf1c100a138780a2bb1
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:15:11 2015 -0500
+
+    Update TestAllocator.c++
+
+commit eb872a5c67d5762f4ab7ddb30e8ccd4a5e19ac83
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:12:17 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 300b42347ce39f691b28c735533a4ca8510ffd91
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:11:25 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 4d3a78af6b0872f49f3f70d95099508a8ef4bd52
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 13:09:16 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 55512e2dd84562a71c7a265991c52eaa0cea706d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:37:51 2015 -0500
+
+    Update Allocator.h
+
+commit 618113c43c13460071b9fc04f6edebdf0903156b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:36:20 2015 -0500
+
+    Update Allocator.h
+
+commit e1ea53d39cc31cc67a8421fb7095ca1f016ab917
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:28:15 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 560143193bf4f9760882603afb123775ae14061c
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:26:06 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 0dc9dcaf69dc70bd6bf5b2a27a5ccff1792efb97
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:24:42 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 879b1c2eaee41d2c453e48fa1a2278148f598f5b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:18:02 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 17374a1cf3bfed8a3a80e8c82ced26df91e16488
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:13:15 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 8d5d11ca9e2a1790091dbd79fb3907def95ab936
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:07:23 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 9ebdd9613c6b18ca121bc5e345fd1c33716d3026
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:05:09 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 20938d02661ea7e486b30f9540c51c09be2d6061
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:03:49 2015 -0500
+
+    Update TestAllocator.c++
+
+commit d90e00aab9e4b8a3b5a707d834538e000dae2202
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 10:00:31 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 580256e3daa8df2fe68a81ce97c52193be63285b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 09:59:09 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 249112bd40eef348ea470448e3da82b58c9dcc24
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 09:57:13 2015 -0500
+
+    Update TestAllocator.c++
+
+commit fdd71fffc3448f7e466686ae9427a0fb097e5d20
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 20 09:52:31 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 12e17e63b19731f5e5fb9c3811d8d458b3f28a4b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 21:59:11 2015 -0500
+
+    a
+
+commit d12f4dd29e33a226f39b319a0b3e75509bb5d862
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Sun Oct 18 18:14:39 2015 -0500
+
+    fixes #11, fixes #16
+
+commit 6581e7cc44265478bf2b4ffa7cab374764c1b9d2
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 17:38:56 2015 -0500
+
+    testing valid
+
+commit b33fa7c54d3415010486af4646e5342ce3c5a06a
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Sun Oct 18 17:24:15 2015 -0500
+
+    fixed valid()?
+
+commit 54f1a2e08f749f40a3a546b748c82ad050455008
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Sun Oct 18 17:01:49 2015 -0500
+
+    working on valid()
+
+commit 2c014b879f165d8eabe8d5ef5e069de60289c788
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 16:56:48 2015 -0500
+
+    fixes #14
+
+commit fe6e4566cec8bc34af999c4fdb6a3fbc3093743f
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 16:56:23 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 9ec0dc655b81e091b85c032c13c9195784c032b4
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Sun Oct 18 15:12:18 2015 -0500
+
+    started writing valid()
+
+commit e2178f50d764a857531a0114cd96941c6e216030
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 15:07:35 2015 -0500
+
+    k
+
+commit a1f2130c347226fe1f692d7fe0d49276a7288011
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 15:01:26 2015 -0500
+
+    improved deallocator
+
+commit ee40664c673f6d1dc78c25c93bd71d64dcf57d58
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 12:28:47 2015 -0500
+
+    Update Allocator.h
+
+commit 7e288e98d87ec7d15ece5b8b1902d7b5d2cd2b07
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 12:23:33 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 09acd44202391ae1fe90cd6760e863d1c584d46b
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 12:12:42 2015 -0500
+
+    Update TestAllocator.c++
+
+commit d2403476d4760ba0c80c1fa2fc710dce88e6da49
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:52:19 2015 -0500
+
+    Update Allocator.h
+
+commit a8e7fc5e64e3d23732bda9d30e0140e80d59a04a
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:22:26 2015 -0500
+
+    Update Allocator.h
+
+commit 9e8650b6a9221499a4542ea76fd4374e14ca7ad0
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:20:44 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 83706a48c65846712922c15aae3f38444aee4061
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:20:39 2015 -0500
+
+    Update Allocator.h
+
+commit f49826ca7ad76ac08d476eccae1b1ab05950bf1d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:14:44 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 526cc5ae657ce25a18d6d6d753931384c5e9d7bd
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:12:52 2015 -0500
+
+    Update TestAllocator.c++
+
+commit dcf05de15afb548acbc3382f3843efe17898b57a
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:12:10 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 232ceda2388ebcc1ac752ac89d9066c4496c2450
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:08:59 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 201405eb3b23634014501b298d745dd5b926f44a
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:03:57 2015 -0500
+
+    Update TestAllocator.c++
+
+commit a033ada7e6370457dfea43cb8a1cf4f4144c4237
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 11:02:31 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 77715be818381a43138e02248dc6bb2bc8478c33
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:58:30 2015 -0500
+
+    Update TestAllocator.c++
+
+commit a16158c80ce6728b80f256ecf3b08461637730b6
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:57:34 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 335fe846227d19e690724f89dced644f07241e05
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:56:16 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 7e769474fe4af291345b1a05aa390369f6e6083d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:55:25 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 3d7b7c424f1ae2cbdb8be8cf90cc8ca18c7d55cb
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:54:51 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 13258846026b22fdc12f4b385d2f1e1ef1237601
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:48:51 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 2a96659ed2f58eb7ae0ea220750ee90a73d2b3aa
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sun Oct 18 10:43:20 2015 -0500
+
+    Update TestAllocator.c++
+
+commit c84afaf67395127d050647cc4cf0aa89a9662943
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 20:50:48 2015 -0500
+
+    Update TestAllocator.c++
+
+commit 66757c6e3eb54f0ddfb3dbc61cdbbc013d704429
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 20:47:18 2015 -0500
+
+    Update Allocator.h
+
+commit 6171f1522eb4b9f67e5cbfad6124b6769ab90c39
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 20:44:14 2015 -0500
+
+    Update Allocator.h
+
+commit 89f2d1e8adb02c3face8a2dde5a04a354c7eed2f
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 20:18:39 2015 -0500
+
+    making dealocator
+
+commit 9fe75021affd8b5cfce2749c438539b885877cef
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Sat Oct 17 19:05:46 2015 -0500
+
+    started on deallocate
+
+commit 597c13b492e838d40b51fc70137074a20a603da6
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 16:44:12 2015 -0500
+
+    tested allocate, fixes #13, fixes #6
+
+commit 535a7dc1863080d96112fe3d3ba0b67251d8c53d
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 15:37:01 2015 -0500
+
+    beginning to test allocate
+
+commit 0385c2989078f38c8aa7796adcdfb355afeb2a4a
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 14:13:23 2015 -0500
+
+    a
+
+commit a9911e76eb8d1eccbfa0b8510ed45bb688776b9e
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Sat Oct 17 14:10:03 2015 -0500
+
+    made deallocate
+
+commit 1da451d472ab60376baf98af1657db50b8b1f284
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Fri Oct 16 17:58:29 2015 -0500
+
+    making allocate method
+
+commit 18df1070890459b67253a527156ab21b19ef6bb6
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Fri Oct 16 17:00:12 2015 -0500
+
+    deleted head line
+
+commit 793d77260b4e3149683ced1fa135bb228ec5fe10
+Merge: c0156a4 dee3fd6
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Fri Oct 16 16:58:51 2015 -0500
+
+    resolving merge conflict
+
+commit dee3fd64baab40f8c2642ce968afca2f47f44550
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Fri Oct 16 16:44:44 2015 -0500
+
+    deleted files
+
+commit 3fb4d187731e96154f03986b3263f78e194b5cc3
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Fri Oct 16 16:42:22 2015 -0500
+
+    fixes #12, fixes #15
+
+commit c0156a410565767156a715d01a06c207c066f3f8
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Fri Oct 16 14:26:38 2015 -0500
+
+    added #include gtest line to Allocator.h
+
+commit 541391c341dc29724641fdc45562978444c9edf8
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Wed Oct 14 14:52:35 2015 -0500
+
+    changed eid in makefile
+
+commit 7388284bedab533e26aedd23a54c910a08f87c2c
+Author: unclejesse <unclejesse@utexas.edu>
+Date:   Wed Oct 14 14:41:41 2015 -0500
+
+    added travis.yml
+
+commit 0af1d57a617e6511a0a0f4ab8c0556fe4f538fec
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Wed Oct 14 14:33:37 2015 -0500
+
+    added makefile
+
+commit 65fd11697a2427d337f1c59d156bc695ee112146
+Author: HowardDennis <h2dennis@gmail.com>
+Date:   Tue Oct 13 21:19:49 2015 -0500
+
+    added necessary files
+
+commit 51faa6a90f6f5f007d8ab3262d588f64e786a3b1
+Author: UncleJesse <unclejesse@utexas.edu>
+Date:   Tue Oct 13 15:12:02 2015 -0500
+
+    Initial commit
