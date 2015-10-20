@@ -155,7 +155,7 @@ TEST(TestAllocator2, not_equal_3) {
 
 TEST(TestAllocator2, construct_1) {
     Allocator<int, 16> x;
-    Allocator<int, 16>& y = x;
+    const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
     cout << sizeof(p[0]) << endl;
     x.construct(p, 7);
@@ -166,7 +166,7 @@ TEST(TestAllocator2, construct_1) {
 
 TEST(TestAllocator2, construct_2) {
     Allocator<double, 100> x;
-    Allocator<double, 100>& y = x;
+    const Allocator<double, 100>& y = x;
     double* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
@@ -175,7 +175,7 @@ TEST(TestAllocator2, construct_2) {
 
 TEST(TestAllocator2, construct_3) {
     Allocator<int, 16> x;
-    Allocator<int, 16>& y = x;
+    const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
