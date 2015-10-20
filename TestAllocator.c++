@@ -153,6 +153,10 @@ TEST(TestAllocator2, not_equal_3) {
     ASSERT_FALSE(x != y);
 }
 
+/**
+ * Tests the construct and destroy functions 
+ */
+
 TEST(TestAllocator2, construct_1) {
     Allocator<int, 16> x;
     const Allocator<int, 16>& y = x;
@@ -161,7 +165,6 @@ TEST(TestAllocator2, construct_1) {
     x.construct(p, 7);
     std::cout << sizeof(p[0]) << std::endl;
     ASSERT_EQ(p[0], 7);
-    ASSERT_EQ(y[4], 7);
 }
 
 TEST(TestAllocator2, construct_2) {
@@ -170,16 +173,41 @@ TEST(TestAllocator2, construct_2) {
     double* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
-    ASSERT_EQ(y[8], 7);
 }
 
 TEST(TestAllocator2, construct_3) {
+    Allocator<char, 9> x;
+    const Allocator<char, 9>& y = x;
+    char* p = x.allocate(1);
+    x.construct(p, 7);
+    ASSERT_EQ(p[0], 7);
+}
+
+TEST(TestAllocator2, destroy_1) {
     Allocator<int, 16> x;
     const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
     x.construct(p, 7);
-    ASSERT_EQ(p[0], 7);
-    ASSERT_EQ(y[4], 7);
+    x.destroy(p);
+    ASSERT_EQ(sizeof(p), 0);
+}
+
+TEST(TestAllocator2, destroy_2) {
+    Allocator<double, 100> x;
+    const Allocator<double, 100>& y = x;
+    double* p = x.allocate(1);
+    x.construct(p, 7);
+    x.destroy(p);
+    ASSERT_EQ(sizeof(p), 0);
+}
+
+TEST(TestAllocator2, destroy_3) {
+    Allocator<char, 16> x;
+    const Allocator<char, 16>& y = x;
+    char* p = x.allocate(1);
+    x.construct(p, 7);
+    x.destroy(p);
+    ASSERT_EQ(sizeof(p), 0);
 }
     
 /**
