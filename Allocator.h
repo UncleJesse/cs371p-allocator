@@ -69,7 +69,8 @@ class Allocator {
         /**
          * O(1) in space
          * O(n) in time
-         * <your documentation>
+         * takes the absolute value of the sentinel, goes forward by that value, checks that the next spot is a sentinel and
+         * that it is equal to the former sentinel
          */
         bool valid () const {
             int i = 0;
@@ -115,7 +116,7 @@ class Allocator {
         /**
          * O(1) in space
          * O(1) in time
-         * <your documentation>
+         * Unused in the tests we made. Takes the four bytes after index and returns an int
          * https://code.google.com/p/googletest/wiki/AdvancedGuide#Private_Class_Members
          */
         FRIEND_TEST(TestAllocator2, index);
@@ -233,19 +234,19 @@ class Allocator {
 
             if (b < sizeof(int) || b >= N - sizeof(int)){  //sees that pointer p is within a[N]
 
-                throw std::invalid_argument("Pointer p is invalid");
+                throw std::invalid_argument("Pointer p is out of bounds");
             }
 
             int& sentinel_1 = (*this)[b - 4];
             int e = b + -sentinel_1;
-            //checks that sentinel_2 is in a[N] and sentinel_1 is negative
+            //checks that sentinel_2 is within a[N] and sentinel_1 is negative
             if (e > N || e < b || sentinel_1 >= 0) {  
-                throw std::invalid_argument("Pointer p is invalid");
+                throw std::invalid_argument("Pointer p doesn't point to the beginning of allocated space");
             }
             int& sentinel_2 = (*this)[e];
 
             if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){ 
-                throw std::invalid_argument("Pointer p is invalid");
+                throw std::invalid_argument("Pointer p doesn't point to allocated space");
             }
 
             if (b > sizeof(int)  && (*this)[b - 2 * sizeof(int)] > 0 && e < (N - sizeof(int)) && (*this)[e + sizeof(int)] > 0) { //coalesces free blocks on both sides
