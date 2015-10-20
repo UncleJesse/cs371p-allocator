@@ -157,9 +157,9 @@ TEST(TestAllocator2, construct_1) {
     Allocator<int, 16> x;
     const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
-    cout << sizeof(p[0]) << endl;
+    std::cout << sizeof(p[0]) << std::endl;
     x.construct(p, 7);
-    cout << sizeof(p[0]) << endl;
+    std::cout << sizeof(p[0]) << std::endl;
     ASSERT_EQ(p[0], 7);
     ASSERT_EQ(y[4], 7);
 }
