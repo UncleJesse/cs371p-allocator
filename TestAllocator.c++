@@ -98,42 +98,23 @@ TYPED_TEST(TestAllocator1, test_10) {
 // TestAllocator2
 // --------------
 
-TEST(TestMyAllocator2, fill)
+TEST(TestMyAllocator2, zero_allocate)
 {	
+	bool pass = false;
+	
 	try
 	{
 		Allocator<int, 100> x;
-		const Allocator<int, 100>& y = x;
 		
-		ASSERT_EQ(y[0], 92);
-		ASSERT_EQ(y[96], 92);
-		
-		int* p1 = x.allocate(2);
-		int* p2 = x.allocate(3);
-		int* p3 = x.allocate(5);
-		int* p4 = x.allocate(7);
-		
-		ASSERT_EQ(y[0], -8);
-		ASSERT_EQ(y[12], -8);
-		ASSERT_EQ(y[16], -12);
-		ASSERT_EQ(y[32], -12);
-		ASSERT_EQ(y[36], -20);
-		ASSERT_EQ(y[60], -20);
-		ASSERT_EQ(y[64], -28);
-		ASSERT_EQ(y[96], -28);
-		
-		x.deallocate(p2, 3);
-		x.deallocate(p4, 7);
-		x.deallocate(p3, 5);
-		x.deallocate(p1, 2);
-		
-		ASSERT_EQ(y[0], 92);
-		ASSERT_EQ(y[96], 92);
+		x.allocate(0);
+
 	}
 	catch (const std::bad_alloc& e)
 	{
-		ASSERT_TRUE(false);
+		pass = true;
 	}
+	
+	ASSERT_EQ(pass,true);
 }
 
 TEST(TestAllocator2, const_index) {
