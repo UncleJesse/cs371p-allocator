@@ -116,7 +116,7 @@ TEST(TestAllocator2, equal_1) {
 
 TEST(TestAllocator2, equal_2) {
     Allocator<int, 100> x;
-    Allocator<double, 100> y;
+    Allocator<int, 16> y;
     ASSERT_EQ(x, y);
 }
     
