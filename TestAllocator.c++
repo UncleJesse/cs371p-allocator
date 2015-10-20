@@ -431,6 +431,31 @@ TEST(TestAllocator2, deallocate_invalid_2) {
     ASSERT_EQ (y[96], -24);
 }
 
+TEST(TestAllocator2, deallocate_invalid_2) {
+    Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
+    x.allocate(4);
+    x.allocate(2);   
+    int* p = x.allocate(5);
+    x.allocate(5);
+    try {
+        x.deallocate(p - 1, 5);
+        ASSERT_TRUE(false);
+    }
+    catch(const std::invalid_argument& e){ 
+        ASSERT_EQ(strcmp(e.what(), "Pointer p is invalid"), 0); 
+    }
+    ASSERT_EQ (p, &y[44]);
+    ASSERT_EQ (y[0], -16);
+    ASSERT_EQ (y[20], -16);
+    ASSERT_EQ (y[24], -8);
+    ASSERT_EQ (y[36], -8);
+    ASSERT_EQ (y[40], 20);
+    ASSERT_EQ (y[64], 20);
+    ASSERT_EQ (y[68], -24);
+    ASSERT_EQ (y[96], -24);
+}
+
 /**
  * Tests the valid function by making an invalid array and catching the exceptionsp0
  */
