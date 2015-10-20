@@ -157,51 +157,28 @@ TEST(TestAllocator2, not_equal_3) {
  * Tests the construct and destroy functions 
  */
 
-TEST(TestAllocator2, construct_1) {
+TEST(TestAllocator2, creation_and_destruction_1) {
     Allocator<int, 16> x;
     int* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
+    x.destroy(p);
 }
 
-TEST(TestAllocator2, construct_2) {
+TEST(TestAllocator2, creation_and_destruction_2) {
     Allocator<double, 100> x;
     double* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
+    x.destroy(p);
 }
 
-TEST(TestAllocator2, construct_3) {
+TEST(TestAllocator2, creation_and_destruction_3) {
     Allocator<char, 9> x;
     char* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
-}
-
-TEST(TestAllocator2, destroy_1) {
-    Allocator<int, 16> x;
-    int* p = x.allocate(1);
-    x.construct(p, 7);
     x.destroy(p);
-    ASSERT_NE(p[0], 7);
-}
-
-TEST(TestAllocator2, destroy_2) {
-    Allocator<double, 100> x;
-    double* p = x.allocate(1);
-    x.construct(p, 7);
-    x.destroy(p);
-    ASSERT_EQ(sizeof(p), 0);
-}
-
-TEST(TestAllocator2, destroy_3) {
-    Allocator<char, 16> x;
-    char* p = x.allocate(1);
-    x.construct(p, 7);
-    std::cout << sizeof(p) << std::endl;
-    x.destroy(p);
-    std::cout << sizeof(p) << std::endl;
-    ASSERT_EQ(sizeof(p), 0);
 }
     
 /**
