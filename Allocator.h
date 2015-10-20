@@ -116,7 +116,7 @@ class Allocator {
         /**
          * O(1) in space
          * O(1) in time
-         * Unused in the tests we made. Takes the four bytes after index and returns an int
+         * Unused in the tests we made. Takes the four bytes after index in a and returns an int
          * https://code.google.com/p/googletest/wiki/AdvancedGuide#Private_Class_Members
          */
         FRIEND_TEST(TestAllocator2, index);
@@ -137,6 +137,7 @@ class Allocator {
             {
                 throw std::bad_alloc();
             }
+            //sentinels equal amount of space between them
             (*this)[0] = N - (2 * sizeof(int));
             (*this)[N - sizeof(int)] = N - (2 * sizeof(int));
             assert(valid());}
@@ -163,7 +164,7 @@ class Allocator {
             if (n < 0) {
                 throw std::bad_alloc();
             }
-            if (n == 0) {
+            if (n == 0) { //doesn't allocate space and returns null
                 return nullptr;
             }
             int i = 0;
@@ -187,7 +188,7 @@ class Allocator {
                         (*this)[i] = -s;
                         (*this)[i + s + sizeof(int)] = -s;
                     }
-                    else {  
+                    else {  //allocates space and changes sentinels to match the new space remaining
                         (*this)[i] = -n * sizeof(T);
                         (*this)[i + n * sizeof(T) + sizeof(int)] = -n * sizeof(T);
                         (*this)[i + n * sizeof(T) + 2 * sizeof(int)] = s - n * sizeof(T) - (2 * sizeof(int));
@@ -197,7 +198,7 @@ class Allocator {
                     not_done = false;
                 }
             }
-            if (i == N)
+            if (i == N)  //this means there wasn't enough room for allocation
             {
                 throw std::bad_alloc();
             }
@@ -227,7 +228,8 @@ class Allocator {
          * O(1) in time
          * after deallocation adjacent free blocks must be coalesced
          * throw an invalid_argument exception, if p is invalid
-         * <your documentation>
+         * Upon receiving the pointer, the function checks the sentinels to see that they're valid.
+         * Then it deallocates the block and coalesces free space on either side
          */
         void deallocate (pointer p, size_type n) {
             int b = (int)((char*)p - a); //gets index of pointer in allocator
