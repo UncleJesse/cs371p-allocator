@@ -115,8 +115,14 @@ TEST(TestAllocator2, equal_1) {
 }
 
 TEST(TestAllocator2, equal_2) {
-    Allocator<int, 100> x;
+    Allocator<int, 16> x;
     Allocator<int, 16> y;
+    ASSERT_EQ(x, y);
+}
+
+TEST(TestAllocator2, equal_3) {
+    Allocator<char, 9> x;
+    Allocator<char, 9> y;
     ASSERT_EQ(x, y);
 }
     
