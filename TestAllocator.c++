@@ -318,7 +318,7 @@ TEST(TestAllocator2, deallocate_2) {
     ASSERT_EQ(y[0], 4);
 }
 
-TEST(TestAllocator2, deallocate_coalesce_front) {
+TEST(TestAllocator2, deallocate_coalesce_front_1) {
     Allocator<int, 68> x;
     const Allocator<int, 68>& y = x;
     int* p = x.allocate(5);
@@ -329,6 +329,25 @@ TEST(TestAllocator2, deallocate_coalesce_front) {
     ASSERT_EQ(y[24], 0);
     ASSERT_EQ(y[28], 0);
     ASSERT_EQ(y[64], 60);
+}
+
+TEST(TestAllocator2, deallocate_coalesce_front_2) {
+    Allocator<int, 100> x;
+    const Allocator<int, 100>& y = x;
+    x.allocate(4);
+    int* p = x.allocate(2);   
+    int* k = x.allocate(5);
+    x.allocate(5); //this should coalesce remaining space
+    x.deallocate(k, 1);
+    x.deallocate(p, 1);
+    ASSERT_EQ (y[0], -16);
+    ASSERT_EQ (y[20], -16);
+    ASSERT_EQ (y[24], 36);
+    ASSERT_EQ (y[36], 0);
+    ASSERT_EQ (y[40], 0);
+    ASSERT_EQ (y[64], 36);
+    ASSERT_EQ (y[68], -24);
+    ASSERT_EQ (y[96], -24);
 }
 
 TEST(TestAllocator2, deallocate_coalesce_behind) {
