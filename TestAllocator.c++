@@ -185,7 +185,6 @@ TEST(TestAllocator2, construct_3) {
 
 TEST(TestAllocator2, destroy_1) {
     Allocator<int, 16> x;
-    const Allocator<int, 16>& y = x;
     int* p = x.allocate(1);
     x.construct(p, 7);
     x.destroy(p);
@@ -194,7 +193,6 @@ TEST(TestAllocator2, destroy_1) {
 
 TEST(TestAllocator2, destroy_2) {
     Allocator<double, 100> x;
-    const Allocator<double, 100>& y = x;
     double* p = x.allocate(1);
     x.construct(p, 7);
     x.destroy(p);
@@ -203,7 +201,6 @@ TEST(TestAllocator2, destroy_2) {
 
 TEST(TestAllocator2, destroy_3) {
     Allocator<char, 16> x;
-    const Allocator<char, 16>& y = x;
     char* p = x.allocate(1);
     x.construct(p, 7);
     x.destroy(p);
