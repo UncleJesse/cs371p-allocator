@@ -431,7 +431,7 @@ TEST(TestAllocator2, deallocate_invalid_2) {
     ASSERT_EQ (y[96], -24);
 }
 
-TEST(TestAllocator2, deallocate_invalid_2) {
+TEST(TestAllocator2, deallocate_invalid_3) {
     Allocator<int, 100> x;
     const Allocator<int, 100>& y = x;
     x.allocate(4);
