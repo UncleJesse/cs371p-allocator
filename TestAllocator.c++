@@ -260,6 +260,8 @@ TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address 
     x.allocate(3);
     int* k = x.allocate(3);
     x.allocate(3);
+    ASSERT_EQ (y[60], 32);
+    ASSERT_EQ (y[96], 32);
     x.deallocate(k, 3);
     int* b = x.allocate(3);
     ASSERT_EQ (b, &y[24]);
@@ -270,7 +272,6 @@ TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address 
     ASSERT_EQ (y[36], -12);
     ASSERT_EQ (y[40], -12);
     ASSERT_EQ (y[56], -12);
-    ASSERT_EQ (y[96], 32);
 }
 
 TEST(TestAllocator2, allocate_first_fit_2) { //allocates at deallocated address with correct fit
