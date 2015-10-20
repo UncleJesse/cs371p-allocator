@@ -377,7 +377,7 @@ TEST(TestAllocator2, deallocate_invalid_1) {
     catch(const std::invalid_argument& e){ 
         ASSERT_EQ(strcmp(e.what(), "Pointer p is invalid"), 0); 
     }
-    ASSERT_EQ (p, &y[72]);
+    ASSERT_EQ (p, &y[44]);
     ASSERT_EQ (y[0], -16);
     ASSERT_EQ (y[20], -16);
     ASSERT_EQ (y[24], -8);
