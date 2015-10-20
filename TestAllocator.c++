@@ -174,6 +174,7 @@ TEST(TestAllocator2, allocate_3) {
     ASSERT_EQ (y[0], -12);
     ASSERT_EQ (y[16], -12);
     ASSERT_EQ (y[20], 72);
+    ASSERT_EQ (y[96], 72);
     }
 
 TEST(TestAllocator2, allocate_4) {
@@ -185,6 +186,7 @@ TEST(TestAllocator2, allocate_4) {
     x.deallocate(k, 3);
     int* b = x.allocate(3);
     ASSERT_EQ (b, &y[24]);
+    ASSERT_EQ (b, k);
     ASSERT_EQ (y[20], -12);
     ASSERT_EQ (y[36], -12);
     }
@@ -252,7 +254,7 @@ TEST(TestAllocator2, allocate_bad_alloc_3) {
     }
 }
 
-TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address
+TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address instead of previously unallocated space
     Allocator<int, 100> x;
     const Allocator<int, 100>& y = x;
     x.allocate(3);
@@ -261,8 +263,14 @@ TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address
     x.deallocate(k, 3);
     int* b = x.allocate(3);
     ASSERT_EQ (b, &y[24]);
+    ASSERT_EQ (b, k);
+    ASSERT_EQ (y[0], -12);
+    ASSERT_EQ (y[16], -12);
     ASSERT_EQ (y[20], -12);
     ASSERT_EQ (y[36], -12);
+    ASSERT_EQ (y[40], -12);
+    ASSERT_EQ (y[44], 52);
+    ASSERT_EQ (y[96], 52);
     }
 
 TEST(TestAllocator2, allocate_first_fit_2) { //allocates at deallocated address with correct fit
@@ -417,7 +425,7 @@ struct TestAllocator3 : testing::Test {
     typedef typename A::pointer    pointer;};
 
 typedef testing::Types<
-            Allocator<int,    100>,
+            Allocator<char,    100>,
             Allocator<double, 100> >
         my_types_2;
 
