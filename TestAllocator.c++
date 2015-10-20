@@ -112,7 +112,7 @@ TEST(TestAllocator6, deallocate_throws_invalid_argument) {
         ASSERT_EQ(1, 1);
     }
 
-    ASSERT_TRUE(x.valid());
+    x.construct(a, 1);
 }
 
 TEST(TestAllocator2, const_index) {
