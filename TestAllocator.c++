@@ -269,7 +269,6 @@ TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address 
     ASSERT_EQ (y[20], -12);
     ASSERT_EQ (y[36], -12);
     ASSERT_EQ (y[40], -12);
-    ASSERT_EQ (y[44], 52);
     ASSERT_EQ (y[96], 52);
     }
 
