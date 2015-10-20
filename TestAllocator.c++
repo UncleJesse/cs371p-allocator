@@ -197,10 +197,11 @@ TEST(TestAllocator2, destroy_2) {
 TEST(TestAllocator2, destroy_3) {
     Allocator<char, 16> x;
     char* p = x.allocate(1);
-    std::cout << sizeof(p) << std::endl;
+    std::cout << sizeof(p[0]) << std::endl;
     x.construct(p, 7);
-    std::cout << sizeof(p) << std::endl;
+    std::cout << sizeof(p[0]) << std::endl;
     x.destroy(p);
+    std::cout << sizeof(p[0]) << std::endl;
     ASSERT_EQ(sizeof(p), 0);
 }
     
