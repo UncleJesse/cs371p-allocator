@@ -121,8 +121,26 @@ TEST(TestAllocator2, equal_2) {
 }
 
 TEST(TestAllocator2, equal_3) {
-    Allocator<char, 8> x;
-    Allocator<char, 8> y;
+    Allocator<char, 9> x;
+    Allocator<char, 9> y;
+    ASSERT_EQ(x, y);
+}
+
+TEST(TestAllocator2, not_equal_1) {
+    Allocator<int, 100> x;
+    Allocator<int, 100> y;
+    ASSERT_EQ(x, y);
+}
+
+TEST(TestAllocator2, not_equal_2) {
+    Allocator<int, 16> x;
+    Allocator<int, 17> y;
+    ASSERT_NE(x, y);
+}
+
+TEST(TestAllocator2, not_equal_3) {
+    Allocator<char, 9> x;
+    Allocator<char, 9> y;
     ASSERT_EQ(x, y);
 }
     
