@@ -241,12 +241,12 @@ class Allocator {
             int e = b + -sentinel_1;
             //checks that sentinel_2 is within a[N] and sentinel_1 is negative
             if (e > N || e < b || sentinel_1 >= 0) {  
-                throw std::invalid_argument("Pointer p doesn't point to the beginning of allocated space");
+                throw std::invalid_argument("Pointer p is invalid");
             }
             int& sentinel_2 = (*this)[e];
 
             if (sentinel_1 >= 0 || sentinel_2 >= 0 || sentinel_1 != sentinel_2){ 
-                throw std::invalid_argument("Pointer p doesn't point to allocated space");
+                throw std::invalid_argument("Pointer p is invalid");
             }
 
             if (b > sizeof(int)  && (*this)[b - 2 * sizeof(int)] > 0 && e < (N - sizeof(int)) && (*this)[e + sizeof(int)] > 0) { //coalesces free blocks on both sides
