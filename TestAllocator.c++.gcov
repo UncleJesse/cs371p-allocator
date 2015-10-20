@@ -1,0 +1,3935 @@
+        -:    0:Source:TestAllocator.c++
+        -:    0:Graph:TestAllocator.gcno
+        -:    0:Data:TestAllocator.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// ------------------------------------
+        -:    2:// projects/allocator/TestAllocator1.c++
+        -:    3:// Copyright (C) 2015
+        -:    4:// Glenn P. Downing
+        -:    5:// ------------------------------------
+        -:    6:
+        -:    7:// --------
+        -:    8:// includes
+        -:    9:// --------
+        -:   10:
+        -:   11:#include <cstring>   // strcmp
+        -:   12:#include <algorithm> // count
+        -:   13:#include <memory>    // allocator
+        -:   14:
+        -:   15:#include "gtest/gtest.h"
+        -:   16:
+        -:   17:#include "Allocator.h"
+        -:   18:
+        -:   19:// --------------
+        -:   20:// TestAllocator1
+        -:   21:// --------------
+        -:   22:
+        -:   23:template <typename A>
+function _ZN14TestAllocator1ISaIiEED0Ev called 0 returned 0% blocks executed 0%
+function _ZN14TestAllocator1ISaIiEED2Ev called 2 returned 100% blocks executed 75%
+function _ZN14TestAllocator1ISaIiEEC2Ev called 2 returned 100% blocks executed 100%
+function _ZN14TestAllocator1ISaIdEED0Ev called 0 returned 0% blocks executed 0%
+function _ZN14TestAllocator1ISaIdEED2Ev called 2 returned 100% blocks executed 75%
+function _ZN14TestAllocator1ISaIdEEC2Ev called 2 returned 100% blocks executed 100%
+function _ZN14TestAllocator1I9AllocatorIiLm100EEED0Ev called 0 returned 0% blocks executed 0%
+function _ZN14TestAllocator1I9AllocatorIiLm100EEED2Ev called 2 returned 100% blocks executed 75%
+function _ZN14TestAllocator1I9AllocatorIiLm100EEEC2Ev called 2 returned 100% blocks executed 100%
+function _ZN14TestAllocator1I9AllocatorIdLm100EEED0Ev called 0 returned 0% blocks executed 0%
+function _ZN14TestAllocator1I9AllocatorIdLm100EEED2Ev called 2 returned 100% blocks executed 75%
+function _ZN14TestAllocator1I9AllocatorIdLm100EEEC2Ev called 2 returned 100% blocks executed 100%
+       16:   24:struct TestAllocator1 : testing::Test {
+call    0 never executed
+call    1 never executed
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+call    5 never executed
+call    6 returned 100%
+call    7 never executed
+call    8 never executed
+call    9 returned 100%
+branch 10 taken 0% (fallthrough)
+branch 11 taken 100%
+call   12 never executed
+call   13 returned 100%
+call   14 never executed
+call   15 never executed
+call   16 returned 100%
+branch 17 taken 0% (fallthrough)
+branch 18 taken 100%
+call   19 never executed
+call   20 returned 100%
+call   21 never executed
+call   22 never executed
+call   23 returned 100%
+branch 24 taken 0% (fallthrough)
+branch 25 taken 100%
+call   26 never executed
+call   27 returned 100%
+        -:   25:    // --------
+        -:   26:    // typedefs
+        -:   27:    // --------
+        -:   28:
+        -:   29:    typedef          A             allocator_type;
+        -:   30:    typedef typename A::value_type value_type;
+        -:   31:    typedef typename A::size_type  size_type;
+        -:   32:    typedef typename A::pointer    pointer;
+        -:   33:};
+        -:   34:
+        -:   35:typedef testing::Types<
+        -:   36:            std::allocator<int>,
+        -:   37:            std::allocator<double>,
+        -:   38:            Allocator<int,    100>,
+        -:   39:            Allocator<double, 100> >
+        -:   40:        my_types_1;
+        -:   41:
+        -:   42:TYPED_TEST_CASE(TestAllocator1, my_types_1);
+        -:   43:
+function _ZN26TestAllocator1_test_1_TestISaIiEE8TestBodyEv called 1 returned 100% blocks executed 53%
+function _ZN26TestAllocator1_test_1_TestISaIdEE8TestBodyEv called 1 returned 100% blocks executed 53%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIiLm100EEE8TestBodyEv called 1 returned 100% blocks executed 53%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIdLm100EEE8TestBodyEv called 1 returned 100% blocks executed 53%
+function _ZN26TestAllocator1_test_1_TestISaIiEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestISaIiEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN26TestAllocator1_test_1_TestISaIdEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestISaIdEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIiLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIiLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIdLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIdLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN26TestAllocator1_test_1_TestISaIiEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestISaIdEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIiLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator1_test_1_TestI9AllocatorIdLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+       17:   44:TYPED_TEST(TestAllocator1, test_1) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+call    5 never executed
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+call   18 returned 100%
+call   19 returned 100%
+call   20 returned 100%
+branch 21 taken 0% (fallthrough)
+branch 22 taken 100%
+call   23 never executed
+call   24 returned 100%
+call   25 returned 100%
+call   26 returned 100%
+call   27 returned 100%
+call   28 returned 100%
+        -:   45:    typedef typename TestFixture::allocator_type allocator_type;
+        -:   46:    typedef typename TestFixture::value_type     value_type;
+        -:   47:    typedef typename TestFixture::size_type      size_type;
+        -:   48:    typedef typename TestFixture::pointer        pointer;
+        -:   49:
+        4:   50:          allocator_type x;
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0% (throw)
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+        4:   51:    const size_type      s = 1;
+        4:   52:    const value_type     v = 2;
+        4:   53:    const pointer        p = x.allocate(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+        4:   54:    if (p != nullptr) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0%
+        4:   55:        x.construct(p, v);
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0% (throw)
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+        8:   56:        ASSERT_EQ(v, *p);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+call   20 returned 100%
+branch 21 taken 100%
+branch 22 taken 0%
+call   23 never executed
+call   24 never executed
+call   25 never executed
+call   26 returned 100%
+branch 27 taken 100% (fallthrough)
+branch 28 taken 0% (throw)
+call   29 returned 100%
+branch 30 taken 0% (fallthrough)
+branch 31 taken 100%
+call   32 never executed
+branch 33 never executed
+branch 34 never executed
+call   35 never executed
+branch 36 never executed
+branch 37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+call   41 never executed
+branch 42 never executed
+branch 43 never executed
+call   44 never executed
+call   45 never executed
+call   46 returned 100%
+branch 47 taken 100%
+branch 48 taken 0%
+call   49 never executed
+call   50 never executed
+call   51 never executed
+call   52 returned 100%
+branch 53 taken 100% (fallthrough)
+branch 54 taken 0% (throw)
+call   55 returned 100%
+branch 56 taken 0% (fallthrough)
+branch 57 taken 100%
+call   58 never executed
+branch 59 never executed
+branch 60 never executed
+call   61 never executed
+branch 62 never executed
+branch 63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+call   70 never executed
+call   71 never executed
+call   72 returned 100%
+branch 73 taken 100%
+branch 74 taken 0%
+call   75 never executed
+call   76 never executed
+call   77 never executed
+call   78 returned 100%
+branch 79 taken 100% (fallthrough)
+branch 80 taken 0% (throw)
+call   81 returned 100%
+branch 82 taken 0% (fallthrough)
+branch 83 taken 100%
+call   84 never executed
+branch 85 never executed
+branch 86 never executed
+call   87 never executed
+branch 88 never executed
+branch 89 never executed
+call   90 never executed
+branch 91 never executed
+branch 92 never executed
+call   93 never executed
+branch 94 never executed
+branch 95 never executed
+call   96 never executed
+call   97 never executed
+call   98 returned 100%
+branch 99 taken 100%
+branch 100 taken 0%
+call   101 never executed
+call   102 never executed
+call   103 never executed
+        4:   57:        x.destroy(p);
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0% (throw)
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+        4:   58:        x.deallocate(p, s);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100%
+branch  3 taken 0%
+call    4 returned 100%
+call    5 returned 100%
+branch  6 taken 100%
+branch  7 taken 0%
+call    8 returned 100%
+branch  9 taken 100% (fallthrough)
+branch 10 taken 0% (throw)
+call   11 returned 100%
+branch 12 taken 100% (fallthrough)
+branch 13 taken 0% (throw)
+        2:   59:    }
+call    0 never executed
+call    1 never executed
+        -:   60:}
+        -:   61:
+function _ZN27TestAllocator1_test_10_TestISaIiEE8TestBodyEv called 1 returned 100% blocks executed 58%
+function _ZN27TestAllocator1_test_10_TestISaIdEE8TestBodyEv called 1 returned 100% blocks executed 58%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIiLm100EEE8TestBodyEv called 1 returned 100% blocks executed 48%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIdLm100EEE8TestBodyEv called 1 returned 100% blocks executed 48%
+function _ZN27TestAllocator1_test_10_TestISaIiEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestISaIiEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator1_test_10_TestISaIdEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestISaIdEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIiLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIiLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIdLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIdLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator1_test_10_TestISaIiEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestISaIdEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIiLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator1_test_10_TestI9AllocatorIdLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+       17:   62:TYPED_TEST(TestAllocator1, test_10) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+call    5 never executed
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+branch 15 taken 0% (fallthrough)
+branch 16 taken 100%
+call   17 never executed
+call   18 returned 100%
+call   19 returned 100%
+call   20 returned 100%
+branch 21 taken 0% (fallthrough)
+branch 22 taken 100%
+call   23 never executed
+call   24 returned 100%
+call   25 returned 100%
+call   26 returned 100%
+call   27 returned 100%
+call   28 returned 100%
+        -:   63:    typedef typename TestFixture::allocator_type allocator_type;
+        -:   64:    typedef typename TestFixture::value_type     value_type;
+        -:   65:    typedef typename TestFixture::size_type      size_type;
+        -:   66:    typedef typename TestFixture::pointer        pointer;
+        -:   67:
+        4:   68:          allocator_type  x;
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0% (throw)
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+        4:   69:    const size_type       s = 10;
+        4:   70:    const value_type      v = 2;
+        4:   71:    const pointer         b = x.allocate(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+call    6 returned 100%
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0% (throw)
+call    9 returned 100%
+branch 10 taken 100% (fallthrough)
+branch 11 taken 0% (throw)
+        4:   72:    if (b != nullptr) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0%
+        4:   73:        pointer e = b + s;
+        4:   74:        pointer p = b;
+        -:   75:        try {
+       48:   76:            while (p != e) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+branch  2 taken 91%
+branch  3 taken 9% (fallthrough)
+branch  4 taken 91%
+branch  5 taken 9% (fallthrough)
+branch  6 taken 91%
+branch  7 taken 9% (fallthrough)
+       40:   77:                x.construct(p, v);
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0% (throw)
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+       40:   78:                ++p;
+        -:   79:            }
+        -:   80:        }
+    =====:   81:        catch (...) {
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    =====:   82:            while (b != p) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    =====:   83:                --p;
+    =====:   84:                x.destroy(p);}
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   85:            x.deallocate(b, s);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:   86:            throw;
+call    0 never executed
+call    1 never executed
+        -:   87:        }
+        8:   88:        ASSERT_EQ(s, std::count(b, e, v));
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 returned 100%
+branch 29 taken 100% (fallthrough)
+branch 30 taken 0% (throw)
+call   31 returned 100%
+branch 32 taken 0% (fallthrough)
+branch 33 taken 100%
+call   34 never executed
+branch 35 never executed
+branch 36 never executed
+call   37 never executed
+branch 38 never executed
+branch 39 never executed
+call   40 never executed
+branch 41 never executed
+branch 42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+call   46 never executed
+call   47 never executed
+call   48 returned 100%
+branch 49 taken 100%
+branch 50 taken 0%
+call   51 never executed
+call   52 never executed
+call   53 never executed
+call   54 returned 100%
+call   55 returned 100%
+branch 56 taken 100% (fallthrough)
+branch 57 taken 0% (throw)
+call   58 returned 100%
+branch 59 taken 0% (fallthrough)
+branch 60 taken 100%
+call   61 never executed
+branch 62 never executed
+branch 63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+call   73 never executed
+call   74 never executed
+call   75 returned 100%
+branch 76 taken 100%
+branch 77 taken 0%
+call   78 never executed
+call   79 never executed
+call   80 never executed
+call   81 returned 100%
+call   82 returned 100%
+branch 83 taken 100% (fallthrough)
+branch 84 taken 0% (throw)
+call   85 returned 100%
+branch 86 taken 0% (fallthrough)
+branch 87 taken 100%
+call   88 never executed
+branch 89 never executed
+branch 90 never executed
+call   91 never executed
+branch 92 never executed
+branch 93 never executed
+call   94 never executed
+branch 95 never executed
+branch 96 never executed
+call   97 never executed
+branch 98 never executed
+branch 99 never executed
+call   100 never executed
+call   101 never executed
+call   102 returned 100%
+branch 103 taken 100%
+branch 104 taken 0%
+call   105 never executed
+call   106 never executed
+call   107 never executed
+       48:   89:        while (b != e) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+branch  2 taken 91%
+branch  3 taken 9% (fallthrough)
+branch  4 taken 91%
+branch  5 taken 9% (fallthrough)
+branch  6 taken 91%
+branch  7 taken 9% (fallthrough)
+       40:   90:            --e;
+       40:   91:            x.destroy(e);
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0% (throw)
+call    5 returned 100%
+branch  6 taken 100% (fallthrough)
+branch  7 taken 0% (throw)
+        -:   92:        }
+        4:   93:        x.deallocate(b, s);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100%
+branch  3 taken 0%
+call    4 returned 100%
+call    5 returned 100%
+branch  6 taken 100%
+branch  7 taken 0%
+call    8 returned 100%
+branch  9 taken 100% (fallthrough)
+branch 10 taken 0% (throw)
+call   11 returned 100%
+branch 12 taken 100% (fallthrough)
+branch 13 taken 0% (throw)
+        2:   94:    }
+call    0 never executed
+call    1 never executed
+        -:   95:}
+        -:   96:
+        -:   97:// --------------
+        -:   98:// TestAllocator2
+        -:   99:// --------------
+        -:  100:
+function _ZN31TestAllocator2_const_index_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN31TestAllocator2_const_index_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN31TestAllocator2_const_index_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+function _ZN31TestAllocator2_const_index_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  101:TEST(TestAllocator2, const_index) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  102:    const Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  103:    ASSERT_EQ(x[0], 92);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  104:}
+        -:  105:
+function _ZN25TestAllocator2_index_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN25TestAllocator2_index_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN25TestAllocator2_index_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+function _ZN25TestAllocator2_index_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  106:TEST(TestAllocator2, index) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  107:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  108:    ASSERT_EQ(x[0], 92);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  109:}
+        -:  110:    
+        -:  111:// --------------
+        -:  112:// The remaining of TestAllocator2 tests 
+        -:  113:// my Allocator class's functions
+        -:  114:// --------------
+        -:  115:
+        -:  116:/**
+        -:  117: * Tests the default constructor 
+        -:  118: */
+function _ZN39TestAllocator2_default_constructor_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN39TestAllocator2_default_constructor_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN39TestAllocator2_default_constructor_Test8TestBodyEv called 1 returned 100% blocks executed 38%
+function _ZN39TestAllocator2_default_constructor_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  119:TEST(TestAllocator2, default_constructor) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  120:    const Allocator<int, 200> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:  121:    //checks sentinels
+        1:  122:    ASSERT_EQ(x[0], 192);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  123:    ASSERT_EQ(x[196], 192);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  124:}
+        -:  125:
+function _ZN48TestAllocator2_default_constructor_smallest_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN48TestAllocator2_default_constructor_smallest_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN48TestAllocator2_default_constructor_smallest_Test8TestBodyEv called 1 returned 100% blocks executed 38%
+function _ZN48TestAllocator2_default_constructor_smallest_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  126:TEST(TestAllocator2, default_constructor_smallest) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  127:    const Allocator<int, 12> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  128:    ASSERT_EQ(x[0], 4);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  129:    ASSERT_EQ(x[8], 4);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  130:}
+        -:  131:
+function _ZN43TestAllocator2_default_constructor_odd_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN43TestAllocator2_default_constructor_odd_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN43TestAllocator2_default_constructor_odd_Test8TestBodyEv called 1 returned 100% blocks executed 38%
+function _ZN43TestAllocator2_default_constructor_odd_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  132:TEST(TestAllocator2, default_constructor_odd) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  133:    const Allocator<int, 13> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  134:    ASSERT_EQ(x[0], 5);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  135:    ASSERT_EQ(x[9], 5);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  136:}
+        -:  137:
+function _ZN49TestAllocator2_default_constructor_bad_alloc_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN49TestAllocator2_default_constructor_bad_alloc_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN49TestAllocator2_default_constructor_bad_alloc_Test8TestBodyEv called 1 returned 100% blocks executed 28%
+function _ZN49TestAllocator2_default_constructor_bad_alloc_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  138:TEST(TestAllocator2, default_constructor_bad_alloc) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  139:    try {
+        1:  140:    const Allocator<int, 11> x; //should not get to the next line
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  141:    ASSERT_TRUE(false);}
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        1:  142:    catch(const std::bad_alloc& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  143:        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  144:    }
+        -:  145:}
+        -:  146:
+        -:  147:/**
+        -:  148: * Tests the allocate function 
+        -:  149: */
+        -:  150:
+function _ZN30TestAllocator2_allocate_1_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN30TestAllocator2_allocate_1_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN30TestAllocator2_allocate_1_Test8TestBodyEv called 1 returned 100% blocks executed 37%
+function _ZN30TestAllocator2_allocate_1_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  151:TEST(TestAllocator2, allocate_1) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  152:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  153:    const Allocator<int, 100>& y = x;
+        1:  154:    int* p = x.allocate(23);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  155:    ASSERT_EQ (p, &y[4]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  156:    ASSERT_EQ (y[0], -92); //uses the pointer to check sentinel
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  157:    ASSERT_EQ (y[96], -92);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  158:}
+        -:  159:
+function _ZN30TestAllocator2_allocate_2_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN30TestAllocator2_allocate_2_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN30TestAllocator2_allocate_2_Test8TestBodyEv called 1 returned 100% blocks executed 37%
+function _ZN30TestAllocator2_allocate_2_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  160:TEST(TestAllocator2, allocate_2) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  161:    Allocator<int, 12> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  162:    const Allocator<int, 12>& y = x;
+        1:  163:    int* p = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  164:    ASSERT_EQ (p, &y[4]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  165:    ASSERT_EQ (y[0], -4);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  166:    ASSERT_EQ (y[8], -4);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  167:}
+        -:  168:
+function _ZN30TestAllocator2_allocate_3_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN30TestAllocator2_allocate_3_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN30TestAllocator2_allocate_3_Test8TestBodyEv called 1 returned 100% blocks executed 36%
+function _ZN30TestAllocator2_allocate_3_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  169:TEST(TestAllocator2, allocate_3) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  170:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  171:    const Allocator<int, 100>& y = x;
+        1:  172:    int* p = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  173:    ASSERT_EQ (p, &y[4]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  174:    ASSERT_EQ (y[0], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  175:    ASSERT_EQ (y[16], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  176:    ASSERT_EQ (y[20], 72);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  177:    }
+        -:  178:
+function _ZN30TestAllocator2_allocate_4_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN30TestAllocator2_allocate_4_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN30TestAllocator2_allocate_4_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+function _ZN30TestAllocator2_allocate_4_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  179:TEST(TestAllocator2, allocate_4) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  180:    Allocator<int, 60> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  181:    const Allocator<int, 60>& y = x;
+        1:  182:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  183:    int* k = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  184:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  185:    x.deallocate(k, 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  186:    int* b = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  187:    ASSERT_EQ (b, &y[24]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  188:    ASSERT_EQ (y[20], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  189:    ASSERT_EQ (y[36], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  190:    }
+        -:  191:
+function _ZN37TestAllocator2_allocate_coalesce_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN37TestAllocator2_allocate_coalesce_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN37TestAllocator2_allocate_coalesce_Test8TestBodyEv called 1 returned 100% blocks executed 37%
+function _ZN37TestAllocator2_allocate_coalesce_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  192:TEST(TestAllocator2, allocate_coalesce) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  193:    //shows that allocate coalesces blocks that are too small to be free
+        1:  194:    Allocator<int, 16> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  195:    const Allocator<int, 16>& y = x;
+        1:  196:    int* p = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  197:    ASSERT_EQ (p, &y[4]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  198:    ASSERT_EQ (y[12], -8);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  199:    ASSERT_EQ (y[0], -8);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  200:}
+        -:  201:
+function _ZN37TestAllocator2_allocate_multiple_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN37TestAllocator2_allocate_multiple_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN37TestAllocator2_allocate_multiple_Test8TestBodyEv called 1 returned 100% blocks executed 36%
+function _ZN37TestAllocator2_allocate_multiple_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  202:TEST(TestAllocator2, allocate_multiple) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  203:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  204:    const Allocator<int, 100>& y = x;
+        1:  205:    x.allocate(4);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  206:    x.allocate(2);   
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  207:    x.allocate(5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  208:    int* p = x.allocate(5); //this should coalesce remaining space
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  209:    ASSERT_EQ (p, &y[72]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  210:    ASSERT_EQ (y[0], -16);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  211:    ASSERT_EQ (y[20], -16);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  212:    ASSERT_EQ (y[24], -8);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  213:    ASSERT_EQ (y[36], -8);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  214:    ASSERT_EQ (y[40], -20);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  215:    ASSERT_EQ (y[64], -20);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  216:    ASSERT_EQ (y[68], -24);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  217:    ASSERT_EQ (y[96], -24);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  218:}
+        -:  219:
+        -:  220:
+        -:  221:
+function _ZN40TestAllocator2_allocate_bad_alloc_1_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN40TestAllocator2_allocate_bad_alloc_1_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN40TestAllocator2_allocate_bad_alloc_1_Test8TestBodyEv called 1 returned 100% blocks executed 29%
+function _ZN40TestAllocator2_allocate_bad_alloc_1_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  222:TEST(TestAllocator2, allocate_bad_alloc_1) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  223:    try {
+        1:  224:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  225:    x.allocate(24);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  226:    ASSERT_TRUE(false);}
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        1:  227:    catch(const std::bad_alloc& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  228:        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  229:    }
+        -:  230:}
+        -:  231:
+function _ZN40TestAllocator2_allocate_bad_alloc_2_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN40TestAllocator2_allocate_bad_alloc_2_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN40TestAllocator2_allocate_bad_alloc_2_Test8TestBodyEv called 1 returned 100% blocks executed 29%
+function _ZN40TestAllocator2_allocate_bad_alloc_2_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  232:TEST(TestAllocator2, allocate_bad_alloc_2) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  233:    try {
+        1:  234:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  235:    x.allocate(-1);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  236:    ASSERT_TRUE(false);}
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        1:  237:    catch(const std::bad_alloc& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  238:        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  239:    }
+        -:  240:}
+        -:  241:
+function _ZN40TestAllocator2_allocate_bad_alloc_3_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN40TestAllocator2_allocate_bad_alloc_3_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN40TestAllocator2_allocate_bad_alloc_3_Test8TestBodyEv called 1 returned 100% blocks executed 32%
+function _ZN40TestAllocator2_allocate_bad_alloc_3_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  242:TEST(TestAllocator2, allocate_bad_alloc_3) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  243:    try {
+        1:  244:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  245:    x.allocate(4);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  246:    x.allocate(2);   
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  247:    x.allocate(5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  248:    x.allocate(7);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  249:    ASSERT_TRUE(false);}
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        1:  250:    catch(const std::bad_alloc& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  251:        ASSERT_EQ(strcmp(e.what(), "std::bad_alloc"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  252:    }
+        -:  253:}
+        -:  254:
+function _ZN40TestAllocator2_allocate_first_fit_1_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN40TestAllocator2_allocate_first_fit_1_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN40TestAllocator2_allocate_first_fit_1_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+function _ZN40TestAllocator2_allocate_first_fit_1_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  255:TEST(TestAllocator2, allocate_first_fit_1) { //allocates at deallocated address
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  256:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  257:    const Allocator<int, 100>& y = x;
+        1:  258:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  259:    int* k = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  260:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  261:    x.deallocate(k, 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  262:    int* b = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  263:    ASSERT_EQ (b, &y[24]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  264:    ASSERT_EQ (y[20], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  265:    ASSERT_EQ (y[36], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  266:    }
+        -:  267:
+function _ZN40TestAllocator2_allocate_first_fit_2_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN40TestAllocator2_allocate_first_fit_2_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN40TestAllocator2_allocate_first_fit_2_Test8TestBodyEv called 1 returned 100% blocks executed 42%
+function _ZN40TestAllocator2_allocate_first_fit_2_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  268:TEST(TestAllocator2, allocate_first_fit_2) { //allocates at deallocated address with correct fit
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  269:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  270:    const Allocator<int, 100>& y = x;
+        1:  271:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  272:    int* k = x.allocate(2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  273:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  274:    int* q = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  275:    x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  276:    x.deallocate(k, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  277:    x.deallocate(q, 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  278:    int* b = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  279:    ASSERT_EQ (b, &y[60]);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  280:    ASSERT_EQ (y[56], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  281:    ASSERT_EQ (y[72], -12);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  282:    }
+        -:  283:
+        -:  284:/**
+        -:  285: * Tests the deallocate function 
+        -:  286: */
+        -:  287:
+function _ZN32TestAllocator2_deallocate_1_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN32TestAllocator2_deallocate_1_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN32TestAllocator2_deallocate_1_Test8TestBodyEv called 1 returned 100% blocks executed 47%
+function _ZN32TestAllocator2_deallocate_1_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  288:TEST(TestAllocator2, deallocate_1) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  289:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  290:    const Allocator<int, 100>& y = x;
+        1:  291:    int* p = x.allocate(23);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  292:    x.deallocate(p, 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  293:    ASSERT_EQ(y[0], 92);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  294:}
+        -:  295:
+function _ZN32TestAllocator2_deallocate_2_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN32TestAllocator2_deallocate_2_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN32TestAllocator2_deallocate_2_Test8TestBodyEv called 1 returned 100% blocks executed 47%
+function _ZN32TestAllocator2_deallocate_2_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  296:TEST(TestAllocator2, deallocate_2) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  297:    Allocator<int, 12> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  298:    const Allocator<int, 12>& y = x;
+        1:  299:    int* p = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  300:    x.deallocate(p, 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  301:    ASSERT_EQ(y[0], 4);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  302:}
+        -:  303:
+function _ZN45TestAllocator2_deallocate_coalesce_front_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN45TestAllocator2_deallocate_coalesce_front_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN45TestAllocator2_deallocate_coalesce_front_Test8TestBodyEv called 1 returned 100% blocks executed 38%
+function _ZN45TestAllocator2_deallocate_coalesce_front_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  304:TEST(TestAllocator2, deallocate_coalesce_front) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  305:    Allocator<int, 68> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  306:    const Allocator<int, 68>& y = x;
+        1:  307:    int* p = x.allocate(5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  308:    int* k = x.allocate(8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  309:    x.deallocate(k, 8);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  310:    x.deallocate(p, 5);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  311:    ASSERT_EQ(y[0], 60);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  312:    ASSERT_EQ(y[24], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  313:    ASSERT_EQ(y[28], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  314:    ASSERT_EQ(y[64], 60);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  315:}
+        -:  316:
+function _ZN46TestAllocator2_deallocate_coalesce_behind_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN46TestAllocator2_deallocate_coalesce_behind_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN46TestAllocator2_deallocate_coalesce_behind_Test8TestBodyEv called 1 returned 100% blocks executed 38%
+function _ZN46TestAllocator2_deallocate_coalesce_behind_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  317:TEST(TestAllocator2, deallocate_coalesce_behind) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  318:    Allocator<int, 36> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  319:    const Allocator<int, 36>& y = x;
+        1:  320:    int* p = x.allocate(2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  321:    int* k = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  322:    x.deallocate(p, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  323:    x.deallocate(k, 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  324:    ASSERT_EQ(y[0], 28);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  325:    ASSERT_EQ(y[12], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  326:    ASSERT_EQ(y[16], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  327:    ASSERT_EQ(y[32], 28);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  328:}
+        -:  329:
+function _ZN50TestAllocator2_deallocate_coalesce_both_sides_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN50TestAllocator2_deallocate_coalesce_both_sides_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN50TestAllocator2_deallocate_coalesce_both_sides_Test8TestBodyEv called 1 returned 100% blocks executed 37%
+function _ZN50TestAllocator2_deallocate_coalesce_both_sides_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  330:TEST(TestAllocator2, deallocate_coalesce_both_sides) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        1:  331:    Allocator<int, 100> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  332:    const Allocator<int, 100>& y = x;
+        1:  333:    int* p = x.allocate(2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  334:    int* k = x.allocate(3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  335:    int* l = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  336:    x.deallocate(p, 2);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  337:    x.deallocate(l, 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  338:    x.deallocate(k, 3);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  339:    ASSERT_EQ(y[0], 92);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  340:    ASSERT_EQ(y[12], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  341:    ASSERT_EQ(y[16], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  342:    ASSERT_EQ(y[32], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  343:    ASSERT_EQ(y[36], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  344:    ASSERT_EQ(y[44], 0);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        1:  345:    ASSERT_EQ(y[96], 92);
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+        -:  346:}
+        -:  347:
+        -:  348:/**
+        -:  349: * Tests valid()
+        -:  350: */
+        -:  351:
+function _ZN27TestAllocator2_valid_1_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator2_valid_1_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator2_valid_1_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+function _ZN27TestAllocator2_valid_1_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  352:TEST(TestAllocator2, valid_1) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  353:    try{
+        1:  354:        Allocator<int, 12> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  355:        int* p = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  356:        p[-1] = 0; 
+        1:  357:        x.destroy(p);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  358:        ASSERT_TRUE(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        -:  359:    }
+        1:  360:    catch(const std::logic_error& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  361:        ASSERT_EQ(strcmp(e.what(), "Invalid sentinal value"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  362:    }
+        -:  363:}
+        -:  364:
+function _ZN27TestAllocator2_valid_2_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator2_valid_2_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator2_valid_2_Test8TestBodyEv called 1 returned 100% blocks executed 30%
+function _ZN27TestAllocator2_valid_2_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  365:TEST(TestAllocator2, valid_2) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  366:    try{
+        1:  367:        Allocator<int, 12> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  368:        int* p = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  369:        p[1] = 1; 
+        1:  370:        x.destroy(p);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  371:        ASSERT_TRUE(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        -:  372:    }
+        1:  373:    catch(const std::logic_error& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  374:        ASSERT_EQ(strcmp(e.what(), "Sentinels don't match"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  375:    }
+        -:  376:}
+        -:  377:
+function _ZN27TestAllocator2_valid_3_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator2_valid_3_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator2_valid_3_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+function _ZN27TestAllocator2_valid_3_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  378:TEST(TestAllocator2, valid_3) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  379:    try{
+        1:  380:        Allocator<double, 16> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  381:        double* q = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  382:        int* p = reinterpret_cast<int*>(&q[0]);
+        1:  383:        x.deallocate(q, 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  384:        p[-1] = 4; 
+        1:  385:        p[1] = 4;
+        1:  386:        x.destroy(q);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  387:        ASSERT_TRUE(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        -:  388:    }
+        1:  389:    catch(const std::logic_error& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  390:        ASSERT_EQ(strcmp(e.what(), "Block too small"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  391:    }
+        -:  392:}
+        -:  393:
+function _ZN27TestAllocator2_valid_4_TestD0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator2_valid_4_TestD2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator2_valid_4_Test8TestBodyEv called 1 returned 100% blocks executed 31%
+function _ZN27TestAllocator2_valid_4_TestC2Ev called 1 returned 100% blocks executed 100%
+        5:  394:TEST(TestAllocator2, valid_4) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+call    3 returned 100%
+call    4 returned 100%
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0% (fallthrough)
+branch  8 taken 100%
+call    9 never executed
+call   10 returned 100%
+        -:  395:    try{
+        1:  396:        Allocator<int, 12> x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  397:        int* p = x.allocate(1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  398:        x.deallocate(p, 1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        1:  399:        p[1] = 1; 
+        1:  400:        x.destroy(p);
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100% (throw)
+    #####:  401:        ASSERT_TRUE(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 never executed
+call   22 never executed
+branch 23 never executed
+branch 24 never executed
+call   25 never executed
+call   26 never executed
+call   27 never executed
+call   28 never executed
+        -:  402:    }
+        1:  403:    catch(const std::logic_error& e){ 
+call    0 never executed
+call    1 never executed
+branch  2 taken 0% (fallthrough)
+branch  3 taken 100%
+call    4 never executed
+call    5 returned 100%
+call    6 returned 100%
+branch  7 taken 0%
+branch  8 taken 100%
+        1:  404:        ASSERT_EQ(strcmp(e.what(), "Sentinels not matching"), 0); 
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 returned 100%
+call    4 returned 100%
+branch  5 taken 0% (throw)
+branch  6 taken 100% (fallthrough)
+call    7 returned 100%
+branch  8 taken 0% (fallthrough)
+branch  9 taken 100%
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 returned 100%
+branch 25 taken 100%
+branch 26 taken 0%
+        1:  405:    }
+        -:  406:}
+        -:  407:
+        -:  408:// --------------
+        -:  409:// TestAllocator3
+        -:  410:// --------------
+        -:  411:
+        -:  412:template <typename A>
+function _ZN14TestAllocator3I9AllocatorIiLm100EEED0Ev called 0 returned 0% blocks executed 0%
+function _ZN14TestAllocator3I9AllocatorIiLm100EEED2Ev called 2 returned 100% blocks executed 75%
+function _ZN14TestAllocator3I9AllocatorIiLm100EEEC2Ev called 2 returned 100% blocks executed 100%
+function _ZN14TestAllocator3I9AllocatorIdLm100EEED0Ev called 0 returned 0% blocks executed 0%
+function _ZN14TestAllocator3I9AllocatorIdLm100EEED2Ev called 2 returned 100% blocks executed 75%
+function _ZN14TestAllocator3I9AllocatorIdLm100EEEC2Ev called 2 returned 100% blocks executed 100%
+        8:  413:struct TestAllocator3 : testing::Test {
+call    0 never executed
+call    1 never executed
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+call    5 never executed
+call    6 returned 100%
+call    7 never executed
+call    8 never executed
+call    9 returned 100%
+branch 10 taken 0% (fallthrough)
+branch 11 taken 100%
+call   12 never executed
+call   13 returned 100%
+        -:  414:    // --------
+        -:  415:    // typedefs
+        -:  416:    // --------
+        -:  417:
+        -:  418:    typedef          A             allocator_type;
+        -:  419:    typedef typename A::value_type value_type;
+        -:  420:    typedef typename A::size_type  size_type;
+        -:  421:    typedef typename A::pointer    pointer;};
+        -:  422:
+        -:  423:typedef testing::Types<
+        -:  424:            Allocator<int,    100>,
+        -:  425:            Allocator<double, 100> >
+        -:  426:        my_types_2;
+        -:  427:
+        -:  428:TYPED_TEST_CASE(TestAllocator3, my_types_2);
+        -:  429:
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIiLm100EEE8TestBodyEv called 1 returned 100% blocks executed 53%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIdLm100EEE8TestBodyEv called 1 returned 100% blocks executed 53%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIiLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIiLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIdLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIdLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIiLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN26TestAllocator3_test_1_TestI9AllocatorIdLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+        9:  430:TYPED_TEST(TestAllocator3, test_1) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+call    5 never executed
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+        -:  431:    typedef typename TestFixture::allocator_type allocator_type;
+        -:  432:    typedef typename TestFixture::value_type     value_type;
+        -:  433:    typedef typename TestFixture::size_type      size_type;
+        -:  434:    typedef typename TestFixture::pointer        pointer;
+        -:  435:
+        2:  436:          allocator_type x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        2:  437:    const size_type      s = 1;
+        2:  438:    const value_type     v = 2;
+        2:  439:    const pointer        p = x.allocate(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        2:  440:    if (p != nullptr) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  441:        x.construct(p, v);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        4:  442:        ASSERT_EQ(v, *p);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+call   19 never executed
+call   20 returned 100%
+branch 21 taken 100%
+branch 22 taken 0%
+call   23 never executed
+call   24 never executed
+call   25 never executed
+call   26 returned 100%
+branch 27 taken 100% (fallthrough)
+branch 28 taken 0% (throw)
+call   29 returned 100%
+branch 30 taken 0% (fallthrough)
+branch 31 taken 100%
+call   32 never executed
+branch 33 never executed
+branch 34 never executed
+call   35 never executed
+branch 36 never executed
+branch 37 never executed
+call   38 never executed
+branch 39 never executed
+branch 40 never executed
+call   41 never executed
+branch 42 never executed
+branch 43 never executed
+call   44 never executed
+call   45 never executed
+call   46 returned 100%
+branch 47 taken 100%
+branch 48 taken 0%
+call   49 never executed
+call   50 never executed
+call   51 never executed
+        2:  443:        x.destroy(p);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        2:  444:        x.deallocate(p, s);}}
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        -:  445:
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIiLm100EEE8TestBodyEv called 1 returned 100% blocks executed 48%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIdLm100EEE8TestBodyEv called 1 returned 100% blocks executed 48%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIiLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIiLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIdLm100EEED0Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIdLm100EEED2Ev called 1 returned 100% blocks executed 75%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIiLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+function _ZN27TestAllocator3_test_10_TestI9AllocatorIdLm100EEEC2Ev called 1 returned 100% blocks executed 100%
+        9:  446:TYPED_TEST(TestAllocator3, test_10) {
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+branch  3 taken 0% (fallthrough)
+branch  4 taken 100%
+call    5 never executed
+call    6 returned 100%
+call    7 returned 100%
+call    8 returned 100%
+branch  9 taken 0% (fallthrough)
+branch 10 taken 100%
+call   11 never executed
+call   12 returned 100%
+call   13 returned 100%
+call   14 returned 100%
+        -:  447:    typedef typename TestFixture::allocator_type allocator_type;
+        -:  448:    typedef typename TestFixture::value_type     value_type;
+        -:  449:    typedef typename TestFixture::size_type      size_type;
+        -:  450:    typedef typename TestFixture::pointer        pointer;
+        -:  451:
+        2:  452:          allocator_type x;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        2:  453:    const size_type      s = 10;
+        2:  454:    const value_type     v = 2;
+        2:  455:    const pointer        b = x.allocate(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        2:  456:    if (b != nullptr) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+        2:  457:        pointer e = b + s;
+        2:  458:        pointer p = b;
+        -:  459:        try {
+       24:  460:            while (p != e) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+branch  2 taken 91%
+branch  3 taken 9% (fallthrough)
+       20:  461:                x.construct(p, v);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+       20:  462:                ++p;}}
+    =====:  463:        catch (...) {
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    =====:  464:            while (b != p) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    =====:  465:                --p;
+    =====:  466:                x.destroy(p);}
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  467:            x.deallocate(b, s);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    =====:  468:            throw;}
+call    0 never executed
+call    1 never executed
+        4:  469:        ASSERT_EQ(s, std::count(b, e, v));
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 0% (fallthrough)
+branch  6 taken 100%
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+call   20 never executed
+call   21 returned 100%
+branch 22 taken 100%
+branch 23 taken 0%
+call   24 never executed
+call   25 never executed
+call   26 never executed
+call   27 returned 100%
+call   28 returned 100%
+branch 29 taken 100% (fallthrough)
+branch 30 taken 0% (throw)
+call   31 returned 100%
+branch 32 taken 0% (fallthrough)
+branch 33 taken 100%
+call   34 never executed
+branch 35 never executed
+branch 36 never executed
+call   37 never executed
+branch 38 never executed
+branch 39 never executed
+call   40 never executed
+branch 41 never executed
+branch 42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+call   46 never executed
+call   47 never executed
+call   48 returned 100%
+branch 49 taken 100%
+branch 50 taken 0%
+call   51 never executed
+call   52 never executed
+call   53 never executed
+       24:  470:        while (b != e) {
+branch  0 taken 91%
+branch  1 taken 9% (fallthrough)
+branch  2 taken 91%
+branch  3 taken 9% (fallthrough)
+       20:  471:            --e;
+       20:  472:            x.destroy(e);}
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+function _GLOBAL__sub_I_gtest_TestAllocator1_test_1_registered_ called 1 returned 100% blocks executed 100%
+function _Z41__static_initialization_and_destruction_0ii called 1 returned 100% blocks executed 100%
+        5:  473:        x.deallocate(b, s);}}
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+branch  5 taken 100% (fallthrough)
+branch  6 taken 0% (throw)
+branch  7 taken 100% (fallthrough)
+branch  8 taken 0%
+branch  9 taken 100% (fallthrough)
+branch 10 taken 0%

@@ -345,6 +345,10 @@ TEST(TestAllocator2, deallocate_coalesce_both_sides) {
     ASSERT_EQ(y[96], 92);
 }
 
+/**
+ * Tests valid()
+ */
+
 TEST(TestAllocator2, valid_1) {
     try{
         Allocator<int, 12> x;
