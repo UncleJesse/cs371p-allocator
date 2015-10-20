@@ -362,6 +362,10 @@ TEST(TestAllocator2, deallocate_coalesce_both_sides) {
     ASSERT_EQ(y[96], 92);
 }
 
+/**
+ * Tests the valid function by making an invalid array and catching the exceptionsp0
+ */
+
 TEST(TestAllocator2, valid_1) {
     try{
         Allocator<int, 12> x;
