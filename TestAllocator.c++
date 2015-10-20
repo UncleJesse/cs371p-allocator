@@ -170,7 +170,7 @@ TEST(TestAllocator2, construct_2) {
     double* p = x.allocate(1);
     x.construct(p, 7);
     ASSERT_EQ(p[0], 7);
-    ASSERT_EQ(y[4], 7);
+    ASSERT_EQ(y[8], 7);
 }
 
 TEST(TestAllocator2, construct_3) {
