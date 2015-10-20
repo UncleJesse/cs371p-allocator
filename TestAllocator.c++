@@ -98,7 +98,7 @@ TYPED_TEST(TestAllocator1, test_10) {
 // TestAllocator2
 // --------------
 
-TEST(TestAllocator6, deallocate_throws_invalid_argument) {
+TEST(TestAllocator2, deallocate_throws_invalid_argument) {
     Allocator<int, 60> x;
 
     size_t s = 3;
@@ -108,7 +108,7 @@ TEST(TestAllocator6, deallocate_throws_invalid_argument) {
         x.deallocate(a + 5, s);
         ASSERT_TRUE(false);
     }
-    catch (invalid_argument& ia) {
+    catch (std::invalid_argument& ia) {
         ASSERT_EQ(1, 1);
     }
 
