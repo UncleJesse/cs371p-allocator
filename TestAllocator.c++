@@ -367,8 +367,8 @@ TEST(TestAllocator2, deallocate_coalesce_behind_2) {
     Allocator<char, 100> x;
     const Allocator<char, 100>& y = x;
     x.allocate(16);
-    int* p = x.allocate(8);   
-    int* k = x.allocate(20);
+    char* p = x.allocate(8);   
+    char* k = x.allocate(20);
     x.allocate(20); //this should coalesce remaining space
     x.deallocate(p, 1);
     x.deallocate(k, 1);
