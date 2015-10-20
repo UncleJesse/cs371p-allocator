@@ -293,7 +293,6 @@ class Allocator {
                 sentinel_2 = -sentinel_2;
             } 
 
-            //std::cout << b << std::endl;
             assert(valid());}
 
         // -------
