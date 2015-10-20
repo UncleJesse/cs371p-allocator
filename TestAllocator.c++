@@ -185,7 +185,7 @@ TEST(TestAllocator2, destroy_1) {
     int* p = x.allocate(1);
     x.construct(p, 7);
     x.destroy(p);
-    ASSERT_EQ(sizeof(p), 0);
+    ASSERT_NE(p[0], 7);
 }
 
 TEST(TestAllocator2, destroy_2) {
