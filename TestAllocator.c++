@@ -450,8 +450,8 @@ TEST(TestAllocator2, deallocate_invalid_3) {
     ASSERT_EQ (y[20], -16);
     ASSERT_EQ (y[24], -8);
     ASSERT_EQ (y[36], -8);
-    ASSERT_EQ (y[40], 20);
-    ASSERT_EQ (y[64], 20);
+    ASSERT_EQ (y[40], -20);
+    ASSERT_EQ (y[64], -20);
     ASSERT_EQ (y[68], -24);
     ASSERT_EQ (y[96], -24);
 }
