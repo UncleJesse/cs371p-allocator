@@ -100,21 +100,8 @@ TYPED_TEST(TestAllocator1, test_10) {
 
 TEST(TestMyAllocator2, zero_allocate)
 {	
-	bool pass = false;
-	
-	try
-	{
-		Allocator<int, 100> x;
-		
-		x.allocate(0);
-
-	}
-	catch (const std::bad_alloc& e)
-	{
-		pass = true;
-	}
-	
-	ASSERT_EQ(pass,true);
+	std::allocator<int> a;
+	int* p = a.allocate(0);
 }
 
 TEST(TestAllocator2, const_index) {
