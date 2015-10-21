@@ -861,7 +861,7 @@ TEST(TestAllocator4, bad_constructor_int_test){
     try{
         Allocator<int, 15> x;
         ASSERT_FALSE(0);
-    }catch(bad_alloc &e){
+    }catch(std::bad_alloc &e){
         ASSERT_TRUE(1);
     }
 }
@@ -870,7 +870,7 @@ TEST(TestAllocator4, bad_constructor_double_test){
     try{
         Allocator<double, 15> x;
         ASSERT_FALSE(0);
-    }catch(bad_alloc &e){
+    }catch(std::bad_alloc &e){
         ASSERT_TRUE(1);
     }
 }
