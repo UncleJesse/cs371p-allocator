@@ -175,28 +175,28 @@ TYPED_TEST(TestAllocator3, test_10) {
 // --------------
 
 TEST(TestAllocator4, all_1){
-    const Allocator<double, 48>x;
+    Allocator<double, 48>x;
     ASSERT_EQ(x[0],40);
     ASSERT_EQ(x[44], 40);
 }
 
 
 TEST(TestAllocator4, all_2){
-    const Allocator<int, 12>x;
+    Allocator<int, 12>x;
     ASSERT_EQ(x[0], 4);
     ASSERT_EQ(x[8], 4);
 }
 
 
 TEST(TestAllocator4, all_3){
-    const Allocator<double, 16>x;
+    Allocator<double, 16>x;
     ASSERT_EQ(x[0],8);
     ASSERT_EQ(x[12], 8);
 }
 
 TEST(TestAllocator4, all_4){
     try{
-        const Allocator<int, 9> x;
+        Allocator<int, 9> x;
         assert(false);
     }
     catch(std::bad_alloc& e){
@@ -204,23 +204,43 @@ TEST(TestAllocator4, all_4){
     }
 }
 
+// --------------
+// TestValid
+// --------------
+
+TEST(TestValid, val_1){
+    Allocator<int, 12>x;
+    assert(x.valid());
+}
+
+TEST(TestValid, val_2){
+    Allocator<int, 18>x;
+    x.allocate(1);
+    assert(x.valid());
+}
+
+TEST(TestValid, val_3){
+    Allocator<int, 12>x;
+    int* ptr = x.allocate(1);
+    x.deallocate(ptr,1);
+    assert(x.valid());
+}
+
 // ------------
 // TestAllocate
 // ------------
 TEST(TestAllocate, allo_1){
-    Allocator<int, 100>x;
-    const Allocator<double, 100>& y = x;;
+    Allocator<double, 100> x;
     x.allocate(11);
-    ASSERT_EQ(y[0], -92);
-    ASSERT_EQ(y[96], -92);
+    ASSERT_EQ(x[0], -92);
+    ASSERT_EQ(x[96], -92);
 }
 
 TEST(TestAllocate, allo_2){
-    Allocator<int, 100>y;
-    const Allocator<double, 100>& x = y;
-    y.allocate(5);
-    y.allocate(5);
-    y.allocate(5);
+    Allocator<int, 100>x;
+    x.allocate(5);
+    x.allocate(5);
+    x.allocate(5);
     ASSERT_EQ(x[0], -20);
     ASSERT_EQ(x[24], -20);
     ASSERT_EQ(x[28], -20);
@@ -232,9 +252,8 @@ TEST(TestAllocate, allo_2){
 }
 
 TEST(TestAllocate, allo_3){
-    Allocator<int, 100>y;
-    const Allocator<double, 100>& x = y;
-    y.allocate(3);
+    Allocator<int, 20>x;
+    x.allocate(3);
     ASSERT_EQ(x[0],-12);
     ASSERT_EQ(x[16],-12);
 }
@@ -269,16 +288,16 @@ TEST(TestDeallocate, deall_1){
     Allocator<int, 100>x;
     int* ptr = x.allocate(23);
     x.deallocate(ptr,23);
+    assert(x.valid());
 }
 
 // No Coalesce
 TEST(TestDeallocate, deall_2){
-    Allocator<int, 100>y;
-    const Allocator<double, 100>& x = y;
-    y.allocate(5);
-    int* ptr2 = y.allocate(5);
-    y.allocate(5);
-    y.deallocate(ptr2,5);
+    Allocator<int, 100>x;
+    x.allocate(5);
+    int* ptr2 = x.allocate(5);
+    x.allocate(5);
+    x.deallocate(ptr2,5);
     ASSERT_EQ(x[0], -20);
     ASSERT_EQ(x[24], -20);
     ASSERT_EQ(x[28], 20);
@@ -287,40 +306,41 @@ TEST(TestDeallocate, deall_2){
     ASSERT_EQ(x[80], -20);
     ASSERT_EQ(x[84], 8);
     ASSERT_EQ(x[96], 8);
+    assert(x.valid());
 }
 
 // Coalesce Front
 TEST(TestDeallocate, deall_3){
-    Allocator<int, 100>y;
-    const Allocator<double, 100>& x = y;
-    int* ptr = y.allocate(5);
-    int* ptr2 = y.allocate(5);
-    y.allocate(5);
-    y.deallocate(ptr2,5);
-    y.deallocate(ptr,5);
+    Allocator<int, 100>x;
+    int* ptr = x.allocate(5);
+    int* ptr2 = x.allocate(5);
+    x.allocate(5);
+    x.deallocate(ptr2,5);
+    x.deallocate(ptr,5);
     ASSERT_EQ(x[0], 48);
     ASSERT_EQ(x[52], 48);
     ASSERT_EQ(x[56], -20);
     ASSERT_EQ(x[80], -20);
     ASSERT_EQ(x[84], 8);
     ASSERT_EQ(x[96], 8);
+    assert(x.valid());
 }
 
 // Coalesce Back
 TEST(TestDeallocate, deall_4){
-    Allocator<int, 100>y;
-    const Allocator<double, 100>& x = y;
-    int* ptr = y.allocate(5);
-    int* ptr2 = y.allocate(5);
-    y.allocate(5);
-    y.deallocate(ptr,5);
-    y.deallocate(ptr2,5);
+    Allocator<int, 100>x;
+    int* ptr = x.allocate(5);
+    int* ptr2 = x.allocate(5);
+    x.allocate(5);
+    x.deallocate(ptr,5);
+    x.deallocate(ptr2,5);
     ASSERT_EQ(x[0], 48);
     ASSERT_EQ(x[52], 48);
     ASSERT_EQ(x[56], -20);
     ASSERT_EQ(x[80], -20);
     ASSERT_EQ(x[84], 8);
     ASSERT_EQ(x[96], 8);
+    assert(x.valid());
 }
 
 // Coalesce Both
