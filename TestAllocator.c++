@@ -273,7 +273,6 @@ TEST(TestAllocate, allo_5) {
     try {
         Allocator<int, 100> x;
         x.allocate(0);
-        assert(false);
     }
     catch(std::bad_alloc& e) {
         assert(true);
