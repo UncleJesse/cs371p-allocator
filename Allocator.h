@@ -61,6 +61,26 @@ class Allocator {
         // ----
 
         char a[N];
+        
+        FRIEND_TEST(TestAllocator2, index);
+        FRIEND_TEST(TestAllocator4, all_1);
+        FRIEND_TEST(TestAllocator4, all_2);
+        FRIEND_TEST(TestAllocator4, all_3);
+        FRIEND_TEST(TestAllocator2, all_4);
+        FRIEND_TEST(TestAllocator2, val_1);
+        FRIEND_TEST(TestAllocator4, val_2);
+        FRIEND_TEST(TestAllocator4, val_3);
+        FRIEND_TEST(TestAllocator4, allo_1);
+        FRIEND_TEST(TestAllocator4, allo_2);
+        FRIEND_TEST(TestAllocator4, allo_3);
+        FRIEND_TEST(TestAllocator4, allo_4);
+        FRIEND_TEST(TestAllocator4, allo_5);
+        FRIEND_TEST(TestAllocator4, deall_1);
+        FRIEND_TEST(TestAllocator4, deall_2);
+        FRIEND_TEST(TestAllocator4, deall_3);
+        FRIEND_TEST(TestAllocator4, deall_4);
+        FRIEND_TEST(TestAllocator4, deall_5);
+        FRIEND_TEST(TestAllocator4, deall_6);
 
         // -----
         // valid
@@ -119,6 +139,14 @@ class Allocator {
          * Unused in the tests we made. Takes the four bytes after index in a and returns an int
          * https://code.google.com/p/googletest/wiki/AdvancedGuide#Private_Class_Members
          */
+        FRIEND_TEST(TestAllocator2, index);
+        FRIEND_TEST(TestAllocator4, deall_1);
+        FRIEND_TEST(TestAllocator4, deall_5);
+        FRIEND_TEST(TestAllocator4, deall_6);
+        FRIEND_TEST(TestAllocator2, index);
+        FRIEND_TEST(TestAllocator4, deall_1);
+        FRIEND_TEST(TestAllocator4, deall_5);
+        FRIEND_TEST(TestAllocator4, deall_6);
         FRIEND_TEST(TestAllocator2, index);
         FRIEND_TEST(TestAllocator4, deall_1);
         FRIEND_TEST(TestAllocator4, deall_5);
