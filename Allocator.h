@@ -61,26 +61,6 @@ class Allocator {
         // ----
 
         char a[N];
-        
-        FRIEND_TEST(TestAllocator2, index);
-        FRIEND_TEST(TestAllocator4, all_1);
-        FRIEND_TEST(TestAllocator4, all_2);
-        FRIEND_TEST(TestAllocator4, all_3);
-        FRIEND_TEST(TestAllocator2, all_4);
-        FRIEND_TEST(TestAllocator2, val_1);
-        FRIEND_TEST(TestAllocator4, val_2);
-        FRIEND_TEST(TestAllocator4, val_3);
-        FRIEND_TEST(TestAllocator4, allo_1);
-        FRIEND_TEST(TestAllocator4, allo_2);
-        FRIEND_TEST(TestAllocator4, allo_3);
-        FRIEND_TEST(TestAllocator4, allo_4);
-        FRIEND_TEST(TestAllocator4, allo_5);
-        FRIEND_TEST(TestAllocator4, deall_1);
-        FRIEND_TEST(TestAllocator4, deall_2);
-        FRIEND_TEST(TestAllocator4, deall_3);
-        FRIEND_TEST(TestAllocator4, deall_4);
-        FRIEND_TEST(TestAllocator4, deall_5);
-        FRIEND_TEST(TestAllocator4, deall_6);
 
         // -----
         // valid
@@ -92,6 +72,37 @@ class Allocator {
          * takes the absolute value of the sentinel, goes forward by that value, checks that the next spot is a sentinel and
          * that it is equal to the former sentinel
          */
+       
+        /**
+         * O(1) in space
+         * O(1) in time
+         * Unused in the tests we made. Takes the four bytes after index in a and returns an int
+         * https://code.google.com/p/googletest/wiki/AdvancedGuide#Private_Class_Members
+         */
+        
+
+    public:
+        // ------------
+        // constructors
+        // ------------
+        /**
+         * O(1) in space
+         * O(1) in time
+         * throw a bad_alloc exception, if N is less than sizeof(T) + (2 * sizeof(int))
+         */
+        Allocator () {
+            if (N < sizeof(T) + (2 * sizeof(int)))
+            {
+                throw std::bad_alloc();
+            }
+            //sentinels equal amount of space between them
+            (*this)[0] = N - (2 * sizeof(int));
+            (*this)[N - sizeof(int)] = N - (2 * sizeof(int));
+            assert(valid());}
+            
+        int& operator [] (int i) {
+            return *reinterpret_cast<int*>(&a[i]);}
+            
         bool valid () const {
             int i = 0;
             while (i < N){
@@ -132,46 +143,6 @@ class Allocator {
             }
             return true;
         }
-
-        /**
-         * O(1) in space
-         * O(1) in time
-         * Unused in the tests we made. Takes the four bytes after index in a and returns an int
-         * https://code.google.com/p/googletest/wiki/AdvancedGuide#Private_Class_Members
-         */
-        FRIEND_TEST(TestAllocator2, index);
-        FRIEND_TEST(TestAllocator4, deall_1);
-        FRIEND_TEST(TestAllocator4, deall_5);
-        FRIEND_TEST(TestAllocator4, deall_6);
-        FRIEND_TEST(TestAllocator2, index);
-        FRIEND_TEST(TestAllocator4, deall_1);
-        FRIEND_TEST(TestAllocator4, deall_5);
-        FRIEND_TEST(TestAllocator4, deall_6);
-        FRIEND_TEST(TestAllocator2, index);
-        FRIEND_TEST(TestAllocator4, deall_1);
-        FRIEND_TEST(TestAllocator4, deall_5);
-        FRIEND_TEST(TestAllocator4, deall_6);
-        int& operator [] (int i) {
-            return *reinterpret_cast<int*>(&a[i]);}
-
-    public:
-        // ------------
-        // constructors
-        // ------------
-        /**
-         * O(1) in space
-         * O(1) in time
-         * throw a bad_alloc exception, if N is less than sizeof(T) + (2 * sizeof(int))
-         */
-        Allocator () {
-            if (N < sizeof(T) + (2 * sizeof(int)))
-            {
-                throw std::bad_alloc();
-            }
-            //sentinels equal amount of space between them
-            (*this)[0] = N - (2 * sizeof(int));
-            (*this)[N - sizeof(int)] = N - (2 * sizeof(int));
-            assert(valid());}
 
         // Default copy, destructor, and copy assignment
         // Allocator  (const Allocator&);
