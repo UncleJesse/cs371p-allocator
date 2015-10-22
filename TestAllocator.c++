@@ -15,6 +15,8 @@
 
 #include "Allocator.h"
 
+using namespace std;
+
 // --------------
 // TestAllocator1
 // --------------
