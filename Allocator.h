@@ -18,6 +18,8 @@
 #include <string>
 #include "gtest/gtest_prod.h"
 
+using namespace std;
+
 // ---------
 // Allocator
 // ---------
